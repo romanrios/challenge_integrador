@@ -1,24 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
 /*General*/
 *{
     margin: 0;
     padding: 0;
     --bg-color: #30343f;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 ul, li{
     list-style: none;
 }
 a {
     text-decoration: none;
-    color: #ffffff;
 }
 /*Utilidades*/
 .contenedor{
     padding: 0 80px;
 }
+.boton_blanco{
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 10px 60px;
+    max-width: max-content;
+    border: none;
+    border-radius: 25px;
+}
 /*Clases*/
+
+/* Header */
+
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -31,6 +43,38 @@ a {
     align-items: center;
     gap: 30px;
 }
+.navbar ul li a{
+    color: #ffffff;
+}
+
+/* Banner*/
+
+.banner_img{
+    position: absolute;
+    filter: brightness(0.7);
+    width: 100%;
+    height: 380px;
+    background-position: center 73%;
+    background-size: cover;
+    background-image: url(../img/funkos-banner.webp);
+    z-index: -1;
+}
+.banner article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 380px;
+}
+.banner article h3{
+    color: #ffffff;
+    font-size: 40px;
+}
+.banner article p {
+    color: #e3e3e2;
+}
+
+/* Footer */
+
 .footer{
     background-color: var(--bg-color);
     color: #ffffff;
@@ -49,4 +93,7 @@ a {
 }
 .navbar-footer ul li{
     margin: 10px 0;
+}
+.navbar-footer ul li a{
+    color: #ffffff;
 }
