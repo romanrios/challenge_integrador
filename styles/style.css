@@ -1,8 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
 
 /*General*/
 *{
     margin: 0;
     padding: 0;
+    --bg-color: #30343f;
+    font-family: 'PT Sans', sans-serif;
+}
+ul, li{
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #ffffff;
 }
 /*Utilidades*/
+.contenedor{
+    padding: 0 80px;
+}
 /*Clases*/
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-color);
+    height: 100px;
+}
+.navbar ul{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.footer{
+    background-color: var(--bg-color);
+    color: #ffffff;
+    text-align: center;
+}
+.footer p{
+    padding: 20px;
+}
+.navbar-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: start;
+    padding-top: 70px;
+    padding-bottom: 10px;
+}
+.navbar-footer ul li{
+    margin: 10px 0;
+}
