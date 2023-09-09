@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Funkoshop</title>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 
-<body>
+<body >
     <header> <!-- Inicio Header -->
-        <nav>
+        <nav class="navbar contenedor">
             <a href="./index.html">
                 <img src="./img/branding/logo_light_horizontal.svg" alt="Isologotipo de la marca Funkoshop">
             </a>
@@ -34,11 +35,12 @@
 
     <main> <!-- Inicio Main -->
 
-        <section> <!-- Banner -->
-            <article>
+        <section class="banner"> <!-- Banner -->
+            <div class="banner_img"></div>
+            <article class="contenedor">
                 <h3>Nuevos Ingresos</h3>
                 <p> Descubrí el próximo Funko Pop de tu colección</p>
-                <a href="./pages/shop.html">SHOP</a>
+                <button class="boton_blanco">SHOP</button>
             </article>
         </section>
 
@@ -133,23 +135,20 @@
 
     </main> <!-- Fin Main -->
 
-    <footer>
+    <footer class=" footer contenedor">
         <section>
-            <nav>
+            <nav class="navbar-footer">
                 <ul>
-                    <li><a href="./pages/shop.html"></a>SHOP</li>
-                    <li><a href="./pages/register.html"></a>REGISTRARSE</li>
-                    <li><a href="./pages/login.html"></a>INGRESAR</li>
-                    <li><a href="./pages/contact.html"></a>CONTACTO</li>
+                    <li><a href="../pages/shop.html">SHOP</a></li>
+                    <li><a href="../pages/login.html">INGRESAR</a></li>
+                    <li><a href="../pages/contact.html">CONTACTO</a></li>
                 </ul>
                 <picture>
-                    <img src="./img/branding/isotype.svg" alt="Isotipo de la marca Funkopop">
+                    <img src="../img/branding/isotype.svg" alt="Isotipo de la marca Funkopop">
                 </picture>
             </nav>
-
         </section>
         <p>All rights reserved 2023 - Funkoshop &copy;</p>
-
     </footer>
 
 </body>
