@@ -79,7 +79,7 @@ header,footer{
 
 .navbar{
     
-    height: 150px;
+    height: 15em;
     display: flex;
     background-size: contain;
     flex-basis: 100%; 
