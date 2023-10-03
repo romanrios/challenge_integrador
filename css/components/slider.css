@@ -1,0 +1,28 @@
+/* SLIDER */
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-36);
+    margin: var(--spacing-68) auto;
+}
+
+.slider__title {
+    font-family: var(--alternative-font);
+    font-size: var(--font-display);
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.glide__arrow iconify-icon {
+    color: var(--dark-bg-solid);
+    font-size: var(--font-small);
+}
+
+button.glide__arrow--left {
+    left: 0
+}
+
+button.glide__arrow--right {
+    right: 0;
+}
