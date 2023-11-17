@@ -8,6 +8,7 @@
     --primary-300: rgba(255, 51, 51, 0.3);
 
     --secondary-solid: #1D84B5;
+    --secondary-1200: rgb(114, 178,209);
     --secondary-900: rgba(29, 132, 181, 0.9);
     --secondary-500: rgba(29, 132, 181, 0.5);
     --secondary-300: rgba(29, 132, 181, 0.3);
@@ -38,6 +39,7 @@
     /* Spacings */
     --spacing-128: 12.8rem;
     --spacing-68: 6.8rem;
+    --spacing-48: 4.8rem;
     --spacing-36: 3.6rem;
     --spacing-28: 2.8rem;
     --spacing-24: 2.4rem;
