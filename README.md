@@ -4,13 +4,12 @@
 
 Este es un proyecto como parte del challenge integrador para el curso de NodeJS del Programa Codo a Codo 4.0.
 
-## ⚙ Lenguajes utilizados:
+## ⚙ Herramientas utilizadas:
 
 - HTML
 - CSS
-    - Flex
-    - Grid
-    - Bootstrap
 - JavaScript
+- Librería Glide.js
+- Node.js
 
-__Autores:__ Adriana Somaza, Michelle Harvey, Juan Cáceres, Sandra Paternoster, Laura Filone, Nicolás Joel Mateu, Florencia Camacho, Román Ríos, Orlando José Luján Vilchez, Cristian Javier Contreras, Rubén Hernández.
+__Grupo 2:__ Adriana Somaza, Juan Cáceres, Laura Filone, Román Ríos, Cristian Javier Contreras, Rubén Hernández, José Antonio Pinzón.

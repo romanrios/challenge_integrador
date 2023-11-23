@@ -35,3 +35,10 @@ img {
     max-width: 1200px;
     margin: 0px auto;
 }
+
+.boton{
+    background-color: var(--primary-900);
+    padding: 8px 16px;
+    color: var(--light-font-solid);
+    border: none;
+}

@@ -1,0 +1,55 @@
+.centrar {
+    display: flex;
+    align-items: center;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    width: 290px;
+    line-height: var(--spacing-48);
+}
+
+.login h1 {
+    font-size: var(--font-large);
+}
+
+.login__datos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0px 10px;
+    grid-auto-rows: minmax(30px, auto);
+    font-size: var(--font-small);
+    font-weight: 600;
+}
+
+.login__datos input {
+    border: none;
+    border-bottom: 2px solid var(--primary-900);
+}
+
+.ingresar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ingresar div {
+    display: flex;
+
+    align-items: center;
+    gap: 10px;
+}
+
+.login .enlace{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login form a{
+    color: var(--secondary-1200);
+}
