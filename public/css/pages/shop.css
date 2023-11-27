@@ -1,0 +1,132 @@
+/* SHOP  */
+
+#shop {
+    display: flex;
+}
+
+/* SHOP FILTERS */
+
+.shop__filters {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-28);
+    margin-top: var(--spacing-68);
+    min-width: 24.3rem;
+}
+
+.shop__filters-title {
+    margin-bottom: var(--spacing-12);
+    font-size: var(--font-large);
+    font-weight: 500;
+    display: block;
+}
+
+#search,
+#orderby {
+    width: 100%;
+    font-size: var(--font-medium);
+    padding: var(--spacing-8);
+    border-radius: 6px;
+    border-width: 2px;
+}
+
+.shop__filters-minmax {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.shop__filters-minmax>label {
+    font-size: var(--font-small);
+    font-weight: 500;
+}
+
+#min,
+#max {
+    padding: 0.4rem 0;
+    text-align: center;
+    font-size: var(--font-medium);
+    border-radius: 6px;
+    width: 7.3rem;
+}
+
+.shop__filters-checkboxes {
+    accent-color: var(--primary-solid);
+    margin-left: 1rem;
+    display: grid;
+    grid-template-columns: 2em auto;
+    gap: 0.7rem;
+}
+
+.shop__filters-checkboxes>label {
+    font-size: var(--font-medium);
+    font-weight: 500;
+}
+
+
+/* SHOP ITEMS */
+
+.shop__items {
+    margin-top: var(--spacing-68);
+    margin-bottom: var(--spacing-68);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-28);
+}
+
+.shop__item {
+    /* max-width: 30%; */
+    flex: 1 1 clamp(200px, 30%, 30%);
+    /* 30% DEL PADRE */
+    /* flex-grow / flex-shrink / flex-basis */
+    /* clamp -> ancho mínimo / ideal / máximo */
+}
+
+
+/* PAGE BUTTONS  */
+
+.shop__page-buttons {
+    display: flex;
+    justify-content: center;
+    margin: var(--spacing-68) 0;
+}
+
+.shop__page-button {
+    font-size: var(--font-small);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.4rem;
+    height: 4.4rem;
+    margin: 0 8px;
+    border: 2px solid var(--dark-300);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.shop__page-button:hover {
+    background-color: var(--primary-solid);
+    border: none;
+    color: white;
+
+}
+
+.shop__page-button:first-child,
+.shop__page-button:last-child {
+    font-size: var(--font-large);
+}
+
+.shop__page-button:nth-child(2) {
+    border-color: var(--primary-solid);
+    color: var(--primary-solid);
+    pointer-events: none;
+}
+
+/* MEDIA QUERIES  */
+@media screen and (max-width: 480px) {
+    #shop {
+        flex-direction: column;
+    }
+
+}

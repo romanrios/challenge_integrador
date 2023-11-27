@@ -1,0 +1,99 @@
+<%- include('../partials/header')%>
+
+    <main id="shop" class="container"> <!-- Shop -->
+        <aside class="shop__filters">
+            <div>
+                <label class="shop__filters-title" for="search">BUSCAR</label>
+                <input type="text" name="search" id="search" placeholder="Item o categoría">
+            </div>
+            <div>
+                <label class="shop__filters-title" for="orderby">ORDENAR POR</label>
+                <select name="orderby" id="orderby">
+                    <option value="az">A-Z</option>
+                    <option value="za">Z-A</option>
+                    <option value="desc">Mayor precio</option>
+                    <option value="asc">Menor precio</option>
+                </select>
+            </div>
+            <div>
+                <span class="shop__filters-title">PRECIO</span>
+                <div class="shop__filters-minmax">
+                    <label for="min">MIN</label>
+                    <input type="text" name="min" id="min" placeholder="0">
+                    <label for="max">- MAX</label>
+                    <input type="text" name="max" id="max" placeholder="0">
+                </div>
+            </div>
+            <div>
+                <span class="shop__filters-title" for="filter">FILTRAR</span>
+                <div class="shop__filters-checkboxes">
+                    <input type="checkbox" name="filter" id="news" value="">
+                    <label for="news">NUEVOS</label>
+                    <input type="checkbox" name="filter" id="offers" value="">
+                    <label for="offers">OFERTAS</label>
+                    <input type="checkbox" name="filter" id="limited" value="">
+                    <label for="limited">EDICIÓN ESPECIAL</label>
+                    <input type="checkbox" name="filter" id="fav" value="">
+                    <label for="fav">FAVORITOS</label>
+                </div>
+            </div>
+        </aside>
+
+        <section class="shop__content">
+
+            <ul class="shop__items">
+
+                <% items.forEach( item=> { %>
+
+                    <li class="shop__item">
+                        <article class="card-item">
+                            <a class="card-item__link" href="shop/item/<%= item.product_id%>">
+                                <picture class="card-item__cover">
+
+                                    <% if(item.product_id> 13){%>
+                                        <span class="card-item__tag">NUEVO</span>
+                                        <% }%>
+
+                                            <img class="card-item__img--front" src="../../<%= item.img_front%>" alt="">
+                                            <img class="card-item__img--back" src="../../<%= item.img_back%>" alt="">
+                                </picture>
+                                <div class="card-item__content">
+                                    <p class="card-item__licence">
+                                        <%= item.licence_name%>
+                                    </p>
+                                    <h4 class="card-item__name">
+                                        <%= item.product_name%>
+                                    </h4>
+                                    <p class="card-item__price">
+                                        $ <%= item.product_price%>
+                                    </p>
+                                    <p class="card-item__promo">
+                                        <%= item.dues%> CUOTAS SIN INTERÉS
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                    </li>
+                    <% }); %>
+
+            </ul>
+
+
+            <div class="shop__page-buttons">
+                <div class="shop__page-button"> <iconify-icon icon="tabler:chevron-left"></iconify-icon> </div>
+                <div class="shop__page-button">1</div>
+                <div class="shop__page-button">2</div>
+                <div class="shop__page-button">3</div>
+                <div class="shop__page-button">4</div>
+                <div class="shop__page-button">5</div>
+                <div class="shop__page-button"> <iconify-icon icon="tabler:chevron-right"></iconify-icon> </div>
+            </div>
+        </section>
+
+
+
+
+
+    </main>
+
+    <%- include('../partials/footer')%>

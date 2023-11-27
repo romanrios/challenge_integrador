@@ -1,0 +1,32 @@
+/* EXTERNALS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@100;400;500;600;700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css");
+@import url("https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css");
+
+/* MISCELANEOUS */
+@import url("./misc/variables.css");
+@import url("./misc/normalize.css");
+@import url("./misc/helpers.css");
+@import url("./misc/animations.css");
+
+/* PARTIALS */
+@import url("./partials/header.css");
+@import url("./partials/footer.css");
+
+/* COMPONENTS */
+@import url("./components/buttons.css");
+@import url("./components/card.css");
+@import url("./components/slider.css");
+@import url("./components/form.css");
+
+/* PAGES */
+@import url("./pages/home.css");
+@import url("./pages/shop.css");
+@import url("./pages/item.css");
+@import url("./pages/admin.css");
+@import url("./pages/login.css");
+@import url("./pages/cart.css");
+@import url("./pages/contact.css");
+@import url("./pages/create.css");
+@import url("./pages/edit.css");
+@import url("./pages/register.css");

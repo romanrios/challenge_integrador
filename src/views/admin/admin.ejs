@@ -1,0 +1,53 @@
+<%- include('../partials/header')%>
+
+    <main class="container listado__productos"> <!-- admin -->
+
+        <div class="buscador">
+            <i class="fa-solid fa-magnifying-glass" style="color: #1f1f1f;"></i>
+            <input type="text" placeholder="    código, nombre o categoría">
+        </div>
+
+        <div>
+
+            <div class="encabezado__lista__productos">
+                <h2 class="admin__title">LISTADO DE PRODUCTOS</h2>
+                <div>
+                    <h3>AGREGAR</h3>
+                    <i class="fa-solid fa-square-plus" style="color: #ff3333;"></i>
+                </div>
+            </div>
+            
+
+            <table class="tabla__productos">
+                
+                <thead>
+                    <tr class="primera__fila">
+                        <th scope="col">ID</th>
+                        <th scope="col">Código</th>
+                        <th scope="col">Nombre del Producto</th>
+                        <th scope="col">Categoría</th>
+                    </tr>
+                </thead>
+
+
+                <% items.forEach( item=> { %>
+
+                    <tr>
+                        <td><%= item.product_id%></td>
+                        <td><%= item.product_sku%></td>
+                        <td><%= item.product_name%></td>
+                        <td class="admin__item-licence-name"><%= item.licence_name%></td>
+                        <td><i class="fa-solid fa-pencil" style="color: #1D84B5;"></i></td>
+                        <td class="admin__trash-icon"><i class="fa-solid fa-trash-can" style="color: #FF3333;"></i></td>
+                    </tr>
+
+                    <% }); %>
+
+            </table>
+        </div>
+
+    </main>
+
+    <script src="https://kit.fontawesome.com/a4f9efcdf1.js" crossorigin="anonymous"></script>
+
+    <%- include('../partials/footer')%>
