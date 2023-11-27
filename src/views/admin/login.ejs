@@ -1,0 +1,33 @@
+<%- include('../partials/header')%>
+
+    <main class="container"> <!-- login -->
+        <div class="login">
+            <h2>INGRESAR A MI CUENTA</h2>
+
+            <form action="">
+
+                <div class="centrar login__datos">
+                    <label for="email">Email:</label>
+                    <input id="email" type="text" placeholder="example@mail.com">
+                </div>
+
+                <div class="centrar login__datos">
+                    <label for="contraseña">Contraseña:</label>
+                    <input id="contraseña" type="text" placeholder="•••••••••••••••">
+                </div>
+
+                <div class="centrar ingresar">
+                    <button class="boton">Ingresar</button>
+                    <div>
+                        <input class="login__checkbox" type="checkbox" id="recordarme" name="recordarme">
+                        <label for="recordarme">Recordarme</label><br>
+                    </div>
+                </div>
+
+                <a class="enlace" href="">Olvidé mi contraseña</a>
+            </form>
+
+        </div>
+    </main>
+
+    <%- include('../partials/footer')%>

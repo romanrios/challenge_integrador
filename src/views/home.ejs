@@ -1,0 +1,59 @@
+<%- include('partials/header')%>
+
+    <section class="hero"> <!-- Banner -->
+        <article class="hero__content container">
+            <h3 class="hero__title">Nuevos Ingresos</h3>
+            <p class="hero__text"> Descubrí el próximo Funko Pop de tu colección</p>
+            <a class="hero__link" href="/shop">SHOP</a>
+        </article>
+    </section>
+
+
+    <main class="container">
+
+        <section class="collection">
+            <article class="collection__content">
+                <h3 class="collection__title">STAR WARS</h3>
+                <p class="collection__text">Disfruta de una saga que sigue agregando personajes a su colección.</p>
+                <div class="collection__line"></div>
+                <a class="collection__link" href="/shop">VER COLECCIÓN</a>
+            </article>
+            <picture class="collection__cover">
+                <img src="<%= starwarsItem.img_front%>" alt="Figura coleccionable de Star Wars">
+            </picture>
+        </section>
+
+        <section class="collection">
+            <article class="collection__content">
+                <h3 class="collection__title">POKEMON</h3>
+                <p class="collection__text">Atrapa todos los que puedas y disfruta de una colección llena de amigos.
+                </p>
+                <div class="collection__line"></div>
+                <a class="collection__link" href="/shop">VER COLECCIÓN</a>
+            </article>
+            <picture class="collection__cover">
+                <img src="<%= pokemonItem.img_front%>" alt="Figura coleccionable de Pokemon">
+            </picture>
+        </section>
+
+        <section class="collection">
+            <article class="collection__content">
+                <h3 class="collection__title">HARRY POTTER</h3>
+                <p class="collection__text">Revive los recuerdos de una saga llena de magia y encanto.</p>
+                <div class="collection__line"></div>
+                <a class="collection__link" href="/shop">VER COLECCIÓN</a>
+            </article>
+            <picture class="collection__cover">
+                <img src="<%= harrypotterItem.img_front%>" alt="Figura coleccionable Funko Harry Potter">
+            </picture>
+        </section>
+
+
+        <%- include ('components/slider') %>
+
+    </main> <!-- Fin Main -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+    <script src="/js/glide.js"></script>
+
+    <%- include('partials/footer')%>

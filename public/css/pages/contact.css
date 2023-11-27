@@ -1,0 +1,33 @@
+.contact {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: var(--spacing-36);
+    margin-bottom: var(--spacing-36);
+    line-height: 4rem;
+}
+
+.contact h2 {
+    font-size: var(--font-jumbo);
+    margin-bottom: 4rem;
+}
+
+.contact h3 {
+    font-size: var(--font-xlarge);
+
+}
+
+.contact p {
+    font-size: var(--font-large);
+    margin-bottom: 4rem;
+}
+
+.contact__data-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10rem;
+}
+
+.contact__location{
+    color: var(--dark-700)
+}

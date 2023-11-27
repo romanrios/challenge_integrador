@@ -1,0 +1,90 @@
+.centrar {
+    display: flex;
+    align-items: center;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: var(--spacing-68) auto;
+}
+
+.login h2 {
+    font-size: var(--font-jumbo);
+    font-family: var(--alternative-font);
+    margin-bottom: var(--spacing-28);
+}
+
+.login__datos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: var(--spacing-36);
+}
+
+.login__datos label {
+    font-size: var(--font-large);
+}
+
+.login__datos input {
+    font-family: var(--primary-font);
+    font-size: var(--font-small);
+    border: none;
+    border-bottom: 2px solid var(--primary-900);
+}
+
+.ingresar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: var(--spacing-36);
+}
+
+.ingresar button {
+    padding: var(--spacing-12) var(--spacing-28);
+    font-family: var(--primary-font);
+    font-size: var(--font-xsmall);
+}
+
+.ingresar label {
+    font-size: var(--font-medium);
+}
+
+
+.ingresar div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.login__checkbox {
+    accent-color: var(--primary-solid);
+    transform: scale(1.2);
+}
+
+.login .enlace {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login form a {
+    font-size: var(--font-xsmall);
+    color: var(--secondary-solid);
+}
+
+
+@media screen and (max-width: 1024px) {
+    .login {
+        margin: 18rem auto;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .login {
+        margin: 40rem auto;
+    }
+}

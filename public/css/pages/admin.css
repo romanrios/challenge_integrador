@@ -1,0 +1,103 @@
+/* ADMIN */
+
+
+/* main container */
+.listado__productos {
+    margin-top: var(--spacing-36);
+    margin-bottom: var(--spacing-36);
+
+}
+
+/* search */
+.buscador {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-20);
+    margin-bottom: var(--spacing-36);
+}
+
+.buscador i {
+    font-size: var(--font-xlarge);
+}
+
+.buscador input {
+    font-size: var(--font-large);
+    border-radius: 6px;
+    width: 53rem;
+    height: 4.5rem;
+}
+
+/* list table */
+.encabezado__lista__productos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-36);
+}
+
+.encabezado__lista__productos h2 {
+    font-family: var(--alternative-font);
+    font-size: var(--font-jumbo);
+}
+
+.encabezado__lista__productos div {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-20);
+}
+
+.encabezado__lista__productos div h3 {
+    font-size: var(--font-large);
+}
+
+.encabezado__lista__productos div i {
+    font-size: 3.9rem;
+}
+
+.listado__productos table {
+    width: 100%;
+}
+
+.tabla__productos {
+    font-size: var(--font-large);
+    font-weight: 500;
+    line-height: 6.096rem;
+}
+
+.primera__fila th {
+    text-align: start;
+    font-weight: 700;
+    padding-bottom: 1rem;
+}
+
+thead th:nth-child(1) {
+    width: 5%;
+}
+
+thead th:nth-child(2) {
+    width: 20%;
+}
+
+thead th:nth-child(3) {
+    width: 40%;
+}
+
+thead th:nth-child(4) {
+    width: 27%;
+}
+
+thead th:nth-child(5) {
+    width: 4%;
+}
+
+thead th:nth-child(6) {
+    width: 4%;
+}
+
+.admin__item-licence-name {
+    text-transform: uppercase;
+}
+
+.admin__trash-icon{
+text-align: end;
+}

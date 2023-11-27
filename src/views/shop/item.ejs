@@ -1,0 +1,91 @@
+<%- include('../partials/header')%>
+
+    <!-- Item -->
+    <main class="container">
+        <section class="item">
+            <picture class="item__img card-item__cover">
+                <img class="card-item__img--front" src="../../<%= item.img_front%>" alt="not found">
+                <img class="card-item__img--back" src="../../<%= item.img_back%>" alt="not found">
+            </picture>
+            <article class="item__info">
+                <p class="item__licence">
+                    <%= item.licence_name%>
+                </p>
+                <h3 class="item__name">
+                    <%= item.product_name%>
+                </h3>
+                <p class="item__description">
+                    <%= item.product_description%>
+                </p>
+                <p class="item__price">$ <%= item.product_price%>
+                </p>
+                <div class="item__cart">
+                    <input id="quantity" class="item__input" type="text" name="quantity" placeholder="0">
+                    <button id="add" class="item__quantity" type="button">+</button>
+                    <button id="subtract" class="item__quantity" type="button">-</button>
+                    <button class="item__submit btn btn--primary btn--medium">Agregar al carrito</button>
+                </div>
+                <p class="item__promo"><a href="">Ver métodos de pago</a> - <%= item.dues%> CUOTAS SIN INTERÉS</p>
+            </article>
+        </section>
+
+
+
+        <section class="slider container glide"> <!-- SLIDER -->
+            <h2 class="slider__title">Productos Relacionados</h2>
+            <div class="glide__track" data-glide-el="track">
+                <ul class="slider__items glide__slides">
+
+
+                    <% related.forEach( item=> { %>
+                        <li class="slider__item glide__slide">
+                            <article class="card-item">
+                                <a class="card-item__link" href="/shop/item/<%= item.product_id%>">
+                                    <picture class="card-item__cover">
+
+                                        <% if(item.product_id> 13){%>
+                                            <span class="card-item__tag">NUEVO</span>
+                                            <% }%>
+
+                                                <img class="card-item__img--front" src="<%= item.img_front%>">
+                                                <img class="card-item__img--back" src="<%= item.img_back%>">
+                                    </picture>
+
+                                    <div class="card-item__content">
+                                        <p class="card-item__licence">
+                                            <%= item.licence_name%>
+                                        </p>
+                                        <h4 class="card-item__name">
+                                            <%= item.product_name%>
+                                        </h4>
+                                        <p class="card-item__price">$ <%= item.product_price%>
+                                        </p>
+                                        <p class="card-item__promo">
+                                            <%= item.dues%> CUOTAS SIN INTERÉS
+                                        </p>
+                                    </div>
+                                </a>
+                            </article>
+                        </li>
+                        <% }); %>
+
+
+                </ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                    <iconify-icon icon="tabler:chevron-left"></iconify-icon>
+                </button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                    <iconify-icon icon="tabler:chevron-right"></iconify-icon>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../../js/item.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+    <script src="/js/glide.js"></script>
+
+    <%- include('../partials/footer')%>
