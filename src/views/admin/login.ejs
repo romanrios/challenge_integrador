@@ -4,20 +4,20 @@
         <div class="login">
             <h2>INGRESAR A MI CUENTA</h2>
 
-            <form action="">
+            <form action="" method="post">
 
                 <div class="centrar login__datos">
                     <label for="email">Email:</label>
-                    <input id="email" type="text" placeholder="example@mail.com">
+                    <input type="text" name="email" id="email" placeholder="example@mail.com">
                 </div>
 
                 <div class="centrar login__datos">
-                    <label for="contraseña">Contraseña:</label>
-                    <input id="contraseña" type="text" placeholder="•••••••••••••••">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" name="password" id="password" placeholder="•••••••••••••••">
                 </div>
 
                 <div class="centrar ingresar">
-                    <button class="boton">Ingresar</button>
+                    <button class="boton" type="submit">Ingresar</button>
                     <div>
                         <input class="login__checkbox" type="checkbox" id="recordarme" name="recordarme">
                         <label for="recordarme">Recordarme</label><br>

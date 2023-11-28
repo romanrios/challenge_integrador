@@ -34,42 +34,47 @@
 
     <main class="container">
         <H1>CREAR NUEVO ITEM</H1>
-        <label for="categoria">Categoria:</label>
-        <select name="categoria" id="categoria">
-            <option value="" disabled selected hidden>Seleccionar</option>
-            <option value="opc1">Star Wars</option>
-            <option value="opc2">Pokemon</option>
-            <option value="opc3">Harry Potter</option>
-        </select>
-        <label for="licencia">Licencia:</label>
-        <select name="licencia" id="licencia">
-            <option value="" disabled selected hidden>Seleccionar</option>
-            <option value="opc1">Star Wars</option>
-            <option value="opc2">Pokemon</option>
-            <option value="opc3">Harry Potter</option>
-        </select>
-        <label for="nombre">Nombre del Producto:</label>
-        <input type="text" name="nombre" id="nombre">
-        <textarea name="descripcion" id="descripcion" cols="30" rows="10"
-            placeholder="Descripcion del producto"></textarea>
-        <label for="sku">SKU</label>
-        <input type="text" name="sku" id="sku">
-        <label for="">Precio:</label>
-        <input type="text" name="precio" id="precio">
-        <label for="stock">Stock</label>
-        <input type="text" name="stock" id="stock">
-        <label for="descuento">Descuento:</label>
-        <input type="text" name="descuento" id="descuento">
-        <label for="cuotas">Cuotas:</label>
-        <select name="cuotas" id="cuotas">
-            <option value="" disabled selected hidden>Seleccionar</option>
-            <option value="opc1">3 Cuotas sin Interes</option>
-            <label for="imagenes">Imagenes</label>
-            <input type="file" value="Elegir Archivos">
-            <span>No se ha seleccionado ningun archivo</span>
-            <a href="#">Agregar Producto</a>
-            <a href="@">Limpiar</a>
-        </select>
+
+        <form action="">
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" id="categoria">
+                <option value="" disabled selected hidden>Seleccionar</option>
+                <option value="opc1">Star Wars</option>
+                <option value="opc2">Pokemon</option>
+                <option value="opc3">Harry Potter</option>
+            </select>
+            <label for="licencia">Licencia:</label>
+            <select name="licencia" id="licencia">
+                <option value="" disabled selected hidden>Seleccionar</option>
+                <option value="opc1">Star Wars</option>
+                <option value="opc2">Pokemon</option>
+                <option value="opc3">Harry Potter</option>
+            </select>
+            <label for="nombre">Nombre del Producto:</label>
+            <input type="text" name="nombre" id="nombre">
+            <textarea name="descripcion" id="descripcion" cols="30" rows="10"
+                placeholder="Descripcion del producto"></textarea>
+            <label for="sku">SKU</label>
+            <input type="text" name="sku" id="sku">
+            <label for="">Precio:</label>
+            <input type="text" name="precio" id="precio">
+            <label for="stock">Stock</label>
+            <input type="text" name="stock" id="stock">
+            <label for="descuento">Descuento:</label>
+            <input type="text" name="descuento" id="descuento">
+            <label for="cuotas">Cuotas:</label>
+            <select name="cuotas" id="cuotas">
+                <option value="" disabled selected hidden>Seleccionar</option>
+                <option value="opc1">3 Cuotas sin Interes</option>
+
+                <label for="imagenes">Imágenes</label>
+                <input type="file" value="Elegir Archivos" name="images" multiple>
+                <span>No se ha seleccionado ningun archivo</span>
+
+                <a href="#">Agregar Producto</a>
+                <a href="@">Limpiar</a>
+            </select>
+        </form>
     </main>
 
     <footer class="footer"> <!-- FOOTER -->

@@ -9,6 +9,7 @@ const mainRoutes = require('./src/routes/mainRoutes');
 const shopRoutes = require('./src/routes/shopRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
 const authRoutes = require('./src/routes/authRoutes');
+const { initSession } = require('./src/utils/sessions');
 
 // Template Engines
 app.set('view engine', 'ejs');
@@ -19,6 +20,13 @@ app.use(express.static(path.resolve(__dirname, 'public'))); // define carpeta de
 app.use(express.json()); // Para POST. Parsea datos, los convierte a un formato que entienda el servidor
 app.use(express.urlencoded()); // Idem anterior.    (deprecated?)
 app.use(methodOverride('_method')); // para PUT y DELETE
+
+// User Session
+app.use(initSession());
+app.use((req, res, next) => {
+    res.locals.isLogged = req.session.isLogged;
+    next();
+});
 
 // Rutas
 app.use('/', mainRoutes);
