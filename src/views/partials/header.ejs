@@ -15,39 +15,85 @@
 <body>
 
     <header> <!-- Inicio Header -->
-        <nav class="navbar container">
-            <picture class="navbar__logo">
-                <a href="/home">
-                    <img src="/img/branding/logo_light_horizontal.svg" alt="Isologotipo de la marca Funkoshop">
-                </a>
-            </picture>
-            <ul class="navbar__menu">
-                <li class="navbar__item with-submenu">
-                    <a class="navbar__link with-icon" href="/shop">SHOP<iconify-icon
-                            icon="tabler:chevron-down"></iconify-icon></a>
-                    <ul class="submenu">
-                        <li class="submenu__item">
-                            <a href="/shop" class="submenu__link">Funkos</a>
+
+        <% if(locals.isLogged) { %>
+
+            <nav class="navbar container">
+                <picture class="navbar__logo">
+                    <a href="/home">
+                        <img src="/img/branding/logo_light_horizontal.svg" alt="Isologotipo de la marca Funkoshop">
+                    </a>
+                </picture>
+                <ul class="navbar__menu">
+                    <li class="navbar__item with-submenu">
+                        <a class="navbar__link with-icon" href="/shop">VER TIENDA<iconify-icon
+                                icon="tabler:chevron-down"></iconify-icon></a>
+                        <ul class="submenu">
+                            <li class="submenu__item">
+                                <a href="/shop" class="submenu__link">Funkos</a>
+                            </li>
+                            <li class="submenu__item">
+                                <a href="/shop" class="submenu__link">Remeras</a>
+                            </li>
+                            <li class="submenu__item">
+                                <a href="/shop" class="submenu__link">Llaveros</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="navbar__link" href="/admin">ADMIN</a>
+                    </li class="navbar__item">
+                    <li>
+                        <a class="navbar__link" href="/auth/logout">SALIR</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+
+
+
+
+            <% } else { %>
+
+                <nav class="navbar container">
+                    <picture class="navbar__logo">
+                        <a href="/home">
+                            <img src="/img/branding/logo_light_horizontal.svg" alt="Isologotipo de la marca Funkoshop">
+                        </a>
+                    </picture>
+                    <ul class="navbar__menu">
+                        <li class="navbar__item with-submenu">
+                            <a class="navbar__link with-icon" href="/shop">SHOP<iconify-icon
+                                    icon="tabler:chevron-down"></iconify-icon></a>
+                            <ul class="submenu">
+                                <li class="submenu__item">
+                                    <a href="/shop" class="submenu__link">Funkos</a>
+                                </li>
+                                <li class="submenu__item">
+                                    <a href="/shop" class="submenu__link">Remeras</a>
+                                </li>
+                                <li class="submenu__item">
+                                    <a href="/shop" class="submenu__link">Llaveros</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="submenu__item">
-                            <a href="/shop" class="submenu__link">Remeras</a>
+                        <li>
+                            <a class="navbar__link" href="/contact">CONTACTO</a>
+                        </li class="navbar__item">
+                        <li>
+                            <a class="navbar__link" href="/auth/login">LOGIN</a>
                         </li>
-                        <li class="submenu__item">
-                            <a href="/shop" class="submenu__link">Llaveros</a>
+                        <li class="navbar__item">
+                            <a class="navbar__cart" href="/shop/cart">
+                                <img src="/img/icons/cart-icon.svg" alt="Ícono del carrito de compras">
+                            </a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a class="navbar__link" href="/contact">CONTACTO</a>
-                </li class="navbar__item">
-                <li>
-                    <a class="navbar__link" href="/auth/login">LOGIN</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__cart" href="/shop/cart">
-                        <img src="/img/icons/cart-icon.svg" alt="Ícono del carrito de compras">
-                    </a>
-                </li>
-            </ul>
-        </nav>
+                </nav>
+
+
+
+
+                <% } %>
     </header> <!-- Fin Header -->

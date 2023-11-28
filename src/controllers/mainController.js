@@ -3,7 +3,15 @@ const { getAllItems } = require('../services/itemsServices')
 module.exports = {
 
     home: async (req, res) => {
+
+        req.session.count = req.session.count ? ++req.session.count : 1;
+        console.log(req.session.count);
+
         const items = await getAllItems();
+
+        if (items.isError) {
+            return res.status(500).send('Hemos tenido un error al consultar los datos')
+        }
 
         const starwarsItems = items.filter(item => item.licence_name === 'Star Wars');
         const starwarsItem = starwarsItems[Math.floor(Math.random() * starwarsItems.length)];
@@ -15,7 +23,7 @@ module.exports = {
         const harrypotterItem = harrypotterItems[Math.floor(Math.random() * harrypotterItems.length)];
 
 
-        res.render('./home',
+        return res.render('./home',
             {
                 view:
                 {
