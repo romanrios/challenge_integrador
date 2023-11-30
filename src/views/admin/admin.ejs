@@ -37,8 +37,8 @@
                         <td><%= item.product_sku%></td>
                         <td><%= item.product_name%></td>
                         <td class="admin__item-licence-name"><%= item.licence_name%></td>
-                        <td><i class="fa-solid fa-pencil" style="color: #1D84B5;"></i></td>
-                        <td class="admin__trash-icon"><i class="fa-solid fa-trash-can" style="color: #FF3333;"></i></td>
+                        <td><img src="../img/icons/edit_pencil.svg"></img></td>
+                        <td><img src="../img/icons/delete_trash.svg"></img></td>
                     </tr>
 
                     <% }); %>
@@ -48,6 +48,5 @@
 
     </main>
 
-    <script src="https://kit.fontawesome.com/a4f9efcdf1.js" crossorigin="anonymous"></script>
 
     <%- include('../partials/footer')%>

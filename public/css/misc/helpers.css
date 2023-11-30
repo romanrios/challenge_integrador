@@ -61,18 +61,18 @@ img {
 
 @media screen and (max-width: 768px) {
     html {
-        font-size: 40%;
+        font-size: 45%;
     }
 }
 
 @media screen and (max-width: 480px) {
     html {
-        font-size: 30%;
+        font-size: 35%;
     }
 }
 
 @media screen and (max-width: 320px) {
     html {
-        font-size: 20%;
+        font-size: 30%;
     }
 }

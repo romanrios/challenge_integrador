@@ -65,6 +65,7 @@ header {
 }
 
 .navbar__cart img {
+    min-width: 2.8rem;
     max-width: 3.3rem;
 }
 

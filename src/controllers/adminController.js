@@ -27,7 +27,13 @@ module.exports = {
 
     postCreate: (req, res) => res.send('Página de admin:postCreate'),
 
-    getEdit: (req, res) => res.send('Página de admin:getEdit'),
+    getEdit: async (req, res) => {
+        res.render('./admin/edit',
+            {
+                view: { title: "Edit | Funkoshop" },
+            }
+        );
+    },
 
     postEdit: (req, res) => res.send('Página de admin:postEdit'),
 

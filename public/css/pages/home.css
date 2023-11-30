@@ -81,6 +81,7 @@
 }
 
 .collection__title {
+    text-transform: uppercase;
     font-family: var(--alternative-font);
     font-size: var(--font-display);
     font-weight: 500;

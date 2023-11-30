@@ -1,4 +1,5 @@
-const { getAllItems } = require('../services/itemsServices')
+const { getAllItems } = require('../services/itemsServices');
+const { getAllLicences } = require('../services/licencesServices');
 
 module.exports = {
 
@@ -8,19 +9,14 @@ module.exports = {
         console.log(req.session.count);
 
         const items = await getAllItems();
+        const licences = await getAllLicences();
 
-        if (items.isError) {
+        if (items.isError || licences.isError) {
             return res.status(500).send('Hemos tenido un error al consultar los datos')
         }
 
-        const starwarsItems = items.filter(item => item.licence_name === 'Star Wars');
-        const starwarsItem = starwarsItems[Math.floor(Math.random() * starwarsItems.length)];
-
-        const pokemonItems = items.filter(item => item.licence_name === 'Pokemon');
-        const pokemonItem = pokemonItems[Math.floor(Math.random() * pokemonItems.length)];
-
-        const harrypotterItems = items.filter(item => item.licence_name === 'Harry Potter');
-        const harrypotterItem = harrypotterItems[Math.floor(Math.random() * harrypotterItems.length)];
+        // const starwarsItems = items.filter(item => item.licence_name === 'Star Wars');
+        // const starwarsItem = starwarsItems[Math.floor(Math.random() * starwarsItems.length)];
 
 
         return res.render('./home',
@@ -30,9 +26,9 @@ module.exports = {
                     title: "Home | Funkoshop"
                 },
                 items: items,
-                starwarsItem: starwarsItem,
-                pokemonItem: pokemonItem,
-                harrypotterItem: harrypotterItem
+                licences: licences
+                // starwarsItem: starwarsItem,
+
             }
         );
     },
