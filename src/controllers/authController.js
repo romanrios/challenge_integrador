@@ -27,8 +27,13 @@ module.exports = {
         // res.send('Solicitud de login. User: ' + email + ', Password: ' + password + ` Las credenciales coinciden: ${isLogged}`);
     },
 
-    getRegister: (req, res) => res.send('Página de admin:getRegister'),
-
+    getRegister: async (req, res) => {
+        res.render('./admin/register',
+            {
+                view: { title: "Register | Funkoshop" },
+            }
+        );
+    },
     postRegister: (req, res) => res.send('Página de admin:postRegister'),
 
     getLogout: (req, res) => {

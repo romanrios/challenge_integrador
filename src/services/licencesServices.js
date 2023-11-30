@@ -1,6 +1,6 @@
-const { getAll, getOne } = require('../models/itemsModel');
+const { getAll } = require('../models/licencesModel');
 
-const getAllItems = async (params) => {
+const getAllLicences = async (params) => {
 
     // if params tal cosa
     //  else params tal otra
@@ -11,6 +11,5 @@ const getAllItems = async (params) => {
 }
 
 module.exports = {
-    getAllItems,
-    getOne
+    getAllLicences
 };

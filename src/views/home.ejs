@@ -11,45 +11,33 @@
 
     <main class="container">
 
-        <section class="collection">
-            <article class="collection__content">
-                <h3 class="collection__title">STAR WARS</h3>
-                <p class="collection__text">Disfruta de una saga que sigue agregando personajes a su colección.</p>
-                <div class="collection__line"></div>
-                <a class="collection__link" href="/shop">VER COLECCIÓN</a>
-            </article>
-            <picture class="collection__cover">
-                <img src="<%= starwarsItem.img_front%>" alt="Figura coleccionable de Star Wars">
-            </picture>
-        </section>
+        <% licences.forEach(licence=> {
 
-        <section class="collection">
-            <article class="collection__content">
-                <h3 class="collection__title">POKEMON</h3>
-                <p class="collection__text">Atrapa todos los que puedas y disfruta de una colección llena de amigos.
-                </p>
-                <div class="collection__line"></div>
-                <a class="collection__link" href="/shop">VER COLECCIÓN</a>
-            </article>
-            <picture class="collection__cover">
-                <img src="<%= pokemonItem.img_front%>" alt="Figura coleccionable de Pokemon">
-            </picture>
-        </section>
+            const itemsWithThisLicence = items.filter(item=> item.licence_name === licence.licence_name);
+            const randomItem = itemsWithThisLicence[Math.floor(Math.random() * itemsWithThisLicence.length)];
 
-        <section class="collection">
-            <article class="collection__content">
-                <h3 class="collection__title">HARRY POTTER</h3>
-                <p class="collection__text">Revive los recuerdos de una saga llena de magia y encanto.</p>
-                <div class="collection__line"></div>
-                <a class="collection__link" href="/shop">VER COLECCIÓN</a>
-            </article>
-            <picture class="collection__cover">
-                <img src="<%= harrypotterItem.img_front%>" alt="Figura coleccionable Funko Harry Potter">
-            </picture>
-        </section>
+            %>
+
+            <section class="collection">
+                <article class="collection__content">
+                    <h3 class="collection__title">
+                        <%= licence.licence_name%>
+                    </h3>
+                    <p class="collection__text">
+                        <%= licence.licence_description%>
+                    </p>
+                    <div class="collection__line"></div>
+                    <a class="collection__link" href="/shop">VER COLECCIÓN</a>
+                </article>
+                <picture class="collection__cover">
+                    <img src="<%= randomItem.img_front%>" alt="Figura coleccionable de <% licence.licence_name%>">
+                </picture>
+            </section>
+
+            <% }) %>
 
 
-        <%- include ('components/slider') %>
+                <%- include ('components/slider') %>
 
     </main> <!-- Fin Main -->
 
