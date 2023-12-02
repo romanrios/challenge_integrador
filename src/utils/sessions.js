@@ -1,5 +1,10 @@
-const session = require('express-session');
 require('dotenv').config();
+
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
+const { conn } = require('../config/conn')
+
+const sessionStore = new MySQLStore({}, conn);
 
 function initSession() {
 
@@ -7,6 +12,7 @@ function initSession() {
         secret: process.env.SESSION_NAME,
         resave: false,
         saveUninitialized: true,
+        store: sessionStore,
     });
 };
 
