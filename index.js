@@ -24,7 +24,8 @@ app.use(methodOverride('_method')); // para PUT y DELETE
 // User Session
 app.use(initSession());
 app.use((req, res, next) => {
-    res.locals.isLogged = req.session.isLogged;
+    res.locals.isLogged = req.session.isLogged;  
+    res.locals.shopCart = req.session.shopCart;
     next();
 });
 

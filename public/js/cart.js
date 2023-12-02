@@ -1,23 +1,28 @@
-const add = document.querySelector('#add');
-const subtract = document.querySelector('#subtract');
-const quantity = document.querySelector('#quantity');
+const numbers = [];
 
-add.addEventListener('click', () => quantity.value = Number(quantity.value) + 1);
-subtract.addEventListener('click', () => {
-    if (quantity.value > 0) {
-        quantity.value = Number(quantity.value) - 1
+for (let i = 1; i <= 40; i++) {
+    numbers.push(i);
+}
+
+numbers.forEach(number => {
+    const add = document.querySelector('#add_' + String(number));
+    const subtract = document.querySelector('#subtract_' + String(number));
+    const quantity = document.querySelector('#quantity_' + String(number));
+    const cancel = document.querySelector('#cancel_' + String(number));
+    const card = document.querySelector('#card_' + String(number));
+
+    // Verifica si los elementos existen antes de agregar eventos
+    if (add && subtract && quantity) {
+        add.addEventListener('click', () => quantity.value = Number(quantity.value) + 1);
+        subtract.addEventListener('click', () => {
+            if (quantity.value > 1) {
+                quantity.value = Number(quantity.value) - 1;
+            }
+        });
+        cancel.addEventListener('click', () => {
+            card.remove();
+        });
     }
-});
 
 
-
-const add2 = document.querySelector('#add2');
-const subtract2 = document.querySelector('#subtract2');
-const quantity2 = document.querySelector('#quantity2');
-
-add2.addEventListener('click', () => quantity2.value = Number(quantity2.value) + 1);
-subtract2.addEventListener('click', () => {
-    if (quantity2.value > 0) {
-        quantity2.value = Number(quantity2.value) - 1
-    }
 });

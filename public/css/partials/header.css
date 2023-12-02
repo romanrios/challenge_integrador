@@ -64,9 +64,37 @@ header {
     background-color: var(--primary-900);
 }
 
+.navbar__cart {
+    position: relative;
+    display: inline-flex;
+}
+
+.navbar__cart:hover {
+    scale: 1.1;
+}
+
 .navbar__cart img {
     min-width: 2.8rem;
     max-width: 3.3rem;
+}
+
+.navbar__cart-badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -0.7rem;
+    right: -1.3rem;
+    padding: 0.3rem 0.3rem;
+    min-width: 2.2rem;
+    min-height: 2.2rem;
+
+
+    font-size: 1.3rem;
+    font-family: var(--base-font);
+    color: white;
+    border-radius: 50%;
+    background-color: var(--primary-solid);
 }
 
 
@@ -74,5 +102,12 @@ header {
 @media screen and (max-width: 1024px) {
     .navbar__logo {
         max-width: 40rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar__logo a img {
+        content: url('/img/branding/isotype.svg');
+        max-height: 5rem;
     }
 }

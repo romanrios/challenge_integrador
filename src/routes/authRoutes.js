@@ -8,15 +8,12 @@ const { body } = require('express-validator');
 const loginValidation = [
     body('email')
         .isEmail()
-        .withMessage('Por favor ingrese un correo válido'),
+        .withMessage('Por favor ingrese un correo válido. '),
     body('password')
-        .isLength({min: 6})
-
-        // .isAlphanumeric()
-        // reemplazado por:
+        // .isLength({ min: 6 })
+        // .isAlphanumeric()        
         .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/)
-        
-        .withMessage('La contraseña debe tener al menos 6 carácteres y contener letras y números')
+        .withMessage('La contraseña debe contener letras y números y al menos 6 caracteres. ')
 ];
 
 router.get('/login', authController.getLogin);

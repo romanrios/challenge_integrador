@@ -1,6 +1,5 @@
 /* ADMIN */
 
-
 /* main container */
 .listado__productos {
     margin-top: var(--spacing-36);
@@ -16,16 +15,20 @@
     margin-bottom: var(--spacing-36);
 }
 
-.buscador i {
-    font-size: var(--font-xlarge);
+.buscador img {
+    width: 5rem;
 }
 
 .buscador input {
+    font-family: var(--base-font);
     font-size: var(--font-large);
     border-radius: 6px;
     width: 53rem;
     height: 4.5rem;
+    padding-left: 1rem;
 }
+
+
 
 /* list table */
 .encabezado__lista__productos {
@@ -52,6 +55,15 @@
 
 .encabezado__lista__productos div i {
     font-size: 3.9rem;
+    cursor: pointer;
+}
+
+.encabezado__lista__productos div i:hover {
+    scale: 1.1;
+}
+
+.admin__table-line {
+    height: 6rem;
 }
 
 .listado__productos table {
@@ -61,7 +73,7 @@
 .tabla__productos {
     font-size: var(--font-large);
     font-weight: 500;
-    line-height: 6.096rem;
+    /* line-height: 6.096rem; */
 }
 
 .primera__fila th {
@@ -69,6 +81,11 @@
     font-weight: 700;
     padding-bottom: 1rem;
 }
+
+.admin__item-category-name {
+    text-transform: uppercase;
+}
+
 
 thead th:nth-child(1) {
     width: 5%;
@@ -79,25 +96,30 @@ thead th:nth-child(2) {
 }
 
 thead th:nth-child(3) {
-    width: 40%;
+    width: 45%;
 }
 
 thead th:nth-child(4) {
-    width: 27%;
+    width: 15%;
 }
 
 thead th:nth-child(5) {
-    width: 4%;
+    width: 10%;
 }
 
 thead th:nth-child(6) {
-    width: 4%;
+    width: 5%;
 }
 
-.admin__item-licence-name {
-    text-transform: uppercase;
+.admin__table-icon {
+    text-align: end;
+    cursor: pointer;
 }
 
-.admin__trash-icon{
-text-align: end;
+.admin__table-icon img {
+    width: 3.5rem;
+}
+
+.admin__table-icon img:hover {
+    scale:1.1;
 }

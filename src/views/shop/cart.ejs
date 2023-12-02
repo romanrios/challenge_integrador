@@ -10,91 +10,106 @@
             <p>TOTAL</p>
         </div>
 
+        <% 
+        totalItems=0;
+        totalPrice=0;
 
-        <ul class="cart__component-container">
-            <li class="cart__component">
-                <article>
-                    <img src="../../img/star-wars/baby-yoda-1.webp" alt="Figura Funko Baby Yoda">
-                    <div class="cart__component-info">
-                        <p class="cart__component-title">BABY YODA BLUEBALL</p>
-                        <p class="cart__component-licence">STAR WARS</p>
-                        <p class="cart__component-price">Precio unitario: $1799,99</p>
+        function toCurrency(number) {
+            return number.toLocaleString('es-AR', {
+            style: 'currency' , currency: 'ARS' }); }
+
+        if(locals.shopCart){
+            locals.shopCart.forEach(cartItem=> {
+                totalItems += 1*cartItem.quantity;
+                totalPrice += cartItem.quantity * items.find(item=> item.product_id == cartItem.id).product_price;
+        %>
+
+
+            <ul id="card_<%= cartItem.id%>" class="cart__component-container">
+                <li class="cart__component">
+                    <article>
+                        <img src="../../<%= items.find(item=> item.product_id == cartItem.id).img_front %>"
+                            alt="Figura Funko">
+                        <div class="cart__component-info">
+                            <p class="cart__component-title">
+                                <%= items.find(item=> item.product_id == cartItem.id).product_name %>
+                            </p>
+                            <p class="cart__component-licence">
+                                <%= items.find(item=> item.product_id == cartItem.id).licence_name %>
+                            </p>
+                            <p class="cart__component-price">Precio unitario: <%= toCurrency(Number(items.find(item=>
+                                    item.product_id ==
+                                    cartItem.id).product_price)) %></p>
+                        </div>
+                    </article>
+
+                    <div class="cart__component-quantity-container">
+                        <div class="cart__component-quantity">
+                            <input id="quantity_<%=cartItem.id%>" class="item__input" type="text" name="quantity"
+                                value="<%= cartItem.quantity %>">
+                            <button id="add_<%=cartItem.id%>" class="cart__component-quantity-button" type="button">+</button>
+                            <button id="subtract_<%=cartItem.id%>" class="cart__component-quantity-button" type="button">-</button>
+                        </div>
                     </div>
-                </article>
 
-                <div class="cart__component-quantity-container">
-                    <div class="cart__component-quantity">
-                        <input id="quantity" class="item__input" type="text" name="quantity" placeholder="0">
-                        <button id="add" class="cart__component-quantity-button" type="button">+</button>
-                        <button id="subtract" class="cart__component-quantity-button" type="button">-</button>
-                    </div>
-                </div>
+                    <p class="cart__component-price-total">
+                        <%= toCurrency(cartItem.quantity * items.find(item=> item.product_id
+                            == cartItem.id).product_price) %>
+                    </p>
 
-                <p class="cart__component-price-total">$ 3599,98</p>
-
-                <button class="cart__button-cancel">
-                    <iconify-icon icon="octicon:x-circle-16"></iconify-icon>
-                </button>
-            </li>
-        </ul>
-
-        <ul class="cart__component-container">
-            <li class="cart__component">
-                <article>
-                    <img src="../../img/pokemon/pidgeotto-1.webp" alt="Figura Funko Pidgeotto">
-                    <div class="cart__component-info">
-                        <p class="cart__component-title">PIDGEOTTO</p>
-                        <p class="cart__component-licence">POKEMON</p>
-                        <p class="cart__component-price">Precio unitario: $1799,99</p>
-                    </div>
-                </article>
-
-                <div class="cart__component-quantity-container">
-                    <div class="cart__component-quantity">
-                        <input id="quantity2" class="item__input" type="text" name="quantity" placeholder="0">
-                        <button id="add2" class="cart__component-quantity-button" type="button">+</button>
-                        <button id="subtract2" class="cart__component-quantity-button" type="button">-</button>
-                    </div>
-                </div>
-
-                <p class="cart__component-price-total">$ 3599,98</p>
-
-                <button class="cart__button-cancel">
-                    <iconify-icon icon="octicon:x-circle-16"></iconify-icon>
-                </button>
-            </li>
-        </ul>
-
-
-
-
-        <section class="cart__summary">
-
-            <h2 class="cart__title cart__summary-title">RESUMEN</h2>
-
-            <ul class="cart__summary-container">
-                <li class="cart__summary-line">
-                    <span class="cart__summary-text">CANTIDAD DE ELEMENTOS</span>
-                    <span class="cart__summary-data" id="">3</span>
-                </li>
-                <li class="cart__summary-line">
-                    <span class="cart__summary-text">SUBTOTAL</span>
-                    <span class="cart__summary-data" id="">$5.399,97</span>
-                </li>
-                <li class="cart__summary-line">
-                    <span class="cart__summary-text">ENVÍO</span>
-                    <span class="cart__summary-data" id="">$0,00</span>
-                </li>
-                <div class="cart__summary-border"></div>
-                <li class="cart__summary-line-total">
-                    <span class="cart__summary-text-total">TOTAL</span>
-                    <span class="cart__summary-data-total" id="">$5.399,97</span>
+                    <button class="cart__button-cancel" id="cancel_<%= cartItem.id %>">
+                        <iconify-icon icon="octicon:x-circle-16"></iconify-icon>
+                    </button>
                 </li>
             </ul>
 
-            <a class="cart__summary-pay-button" href="#">IR A PAGAR</a>
+            <% }) } else { %>
 
-        </section>
+                <ul class="cart__component-container">
+                    <li class="cart__component">
+                        <p>
+                            Tu carrito está vacío
+                        </p>
+                    </li>
+                </ul>
+
+                <% } %>
+
+
+
+                    <section class="cart__summary">
+
+                        <h2 class="cart__title cart__summary-title">RESUMEN</h2>
+
+                        <ul class="cart__summary-container">
+                            <li class="cart__summary-line">
+                                <span class="cart__summary-text">CANTIDAD DE ELEMENTOS</span>
+                                <span class="cart__summary-data" id="">
+                                    <%= totalItems%>
+                                </span>
+                            </li>
+                            <li class="cart__summary-line">
+                                <span class="cart__summary-text">SUBTOTAL</span>
+                                <span class="cart__summary-data" id="">
+                                    <%=toCurrency(totalPrice)%>
+                                </span>
+                            </li>
+                            <li class="cart__summary-line">
+                                <span class="cart__summary-text">ENVÍO</span>
+                                <span class="cart__summary-data" id="">$ 0,00</span>
+                            </li>
+                            <div class="cart__summary-border"></div>
+                            <li class="cart__summary-line-total">
+                                <span class="cart__summary-text-total">TOTAL</span>
+                                <span class="cart__summary-data-total" id="">
+                                    <%=toCurrency(totalPrice)%>
+                                </span>
+                            </li>
+                        </ul>
+
+                        <a class="cart__summary-pay-button" href="#">IR A PAGAR</a>
+
+                    </section>
 
     </main>
 
