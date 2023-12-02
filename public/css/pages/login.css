@@ -14,13 +14,21 @@
 .login h2 {
     font-size: var(--font-jumbo);
     font-family: var(--alternative-font);
-    margin-bottom: var(--spacing-28);
+    margin-bottom: var(--spacing-68);
 }
 
 .login__datos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 15rem 29rem;
+    grid-template-rows: 1fr 1fr;
     margin-bottom: var(--spacing-36);
+}
+
+.login__error-message {
+    color: var(--primary-solid);
+    font-size: var(--font-xsmall);
+    grid-column-start: 2;
+    max-width: 29rem;
 }
 
 .login__datos label {
@@ -28,15 +36,16 @@
 }
 
 .login__datos input {
-    font-family: var(--primary-font);
-    font-size: var(--font-small);
+    font-family: var(--base-font);
+    font-size: var(--font-medium);
     border: none;
     border-bottom: 2px solid var(--primary-900);
+    padding: 0.5rem;
 }
 
 .ingresar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     margin-bottom: var(--spacing-36);
 }
@@ -45,6 +54,11 @@
     padding: var(--spacing-12) var(--spacing-28);
     font-family: var(--primary-font);
     font-size: var(--font-xsmall);
+}
+
+.ingresar button:hover {
+    background-color: var(--primary-900);
+    scale: 1.05;
 }
 
 .ingresar label {

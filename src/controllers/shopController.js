@@ -1,5 +1,9 @@
 const { getAllItems, getOne } = require('../services/itemsServices')
 
+
+
+
+
 module.exports = {
 
     getShop: async (req, res) => {
@@ -32,19 +36,36 @@ module.exports = {
         );
     },
 
-    addItem: (req, res) => {
-        res.send(items);
+
+
+    addItem: async (req, res) => {
+
+        const { quantity } = req.body;
+        const itemId = req.params.id;
+        const items = await getAllItems();
+
+        if (!req.session.shopCart) {
+            req.session.shopCart = [];
+        } req.session.shopCart.push({ id: itemId, quantity: quantity });
+        // const myCart = res.locals.shopCart;
+
+        res.redirect('/shop');
+
     },
+
 
     getCart: async (req, res) => {
         const items = await getAllItems();
+        const myCart = res.locals.shopCart;
+
         res.render('./shop/cart',
             {
                 view:
                 {
                     title: "Shop | Funkoshop"
                 },
-                items: items
+                items: items,
+                myCart: myCart
             }
         );
     },

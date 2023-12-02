@@ -3,9 +3,14 @@
     <!-- Item -->
     <main class="container">
         <section class="item">
+
+
+
             <picture class="item__img card-item__cover">
-                <img class="card-item__img--front" src="../../<%= item.img_front%>" alt="Figura coleccionable de <%= item.product_name%>">
-                <img class="card-item__img--back" src="../../<%= item.img_back%>" alt="Figura coleccionable de <%= item.product_name%>">
+                <img class="card-item__img--front" src="../../<%= item.img_front%>"
+                    alt="Figura coleccionable de <%= item.product_name%>">
+                <img class="card-item__img--back" src="../../<%= item.img_back%>"
+                    alt="Figura coleccionable de <%= item.product_name%>">
             </picture>
             <article class="item__info">
                 <p class="item__licence">
@@ -19,15 +24,21 @@
                 </p>
                 <p class="item__price">$ <%= item.product_price%>
                 </p>
-                <div class="item__cart">
-                    <input id="quantity" class="item__input" type="text" name="quantity" placeholder="0">
+
+                <form class="item__cart" action="/shop/item/<%= item.product_id%>/add" method="post">
+
+                    <input id="quantity" class="item__input" type="text" name="quantity" value="1" autocomplete="off">
                     <button id="add" class="item__quantity" type="button">+</button>
                     <button id="subtract" class="item__quantity" type="button">-</button>
-                    <button class="item__submit btn btn--primary btn--medium">Agregar al carrito</button>
-                </div>
+                    <button class="item__submit btn btn--primary btn--medium" type="submit">Agregar al carrito</button>
+
+                </form>
+
                 <p class="item__promo"><a href="">Ver métodos de pago</a> - <%= item.dues%> CUOTAS SIN INTERÉS</p>
             </article>
         </section>
+
+
 
 
 

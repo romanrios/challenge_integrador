@@ -3,28 +3,55 @@ const userCredentials = {
     password: 'roman123'
 }
 
-
 module.exports = {
 
     getLogin: async (req, res) => {
         res.render('./admin/login',
             {
                 view: { title: "Login | Funkoshop" },
+                emailMessage: "",
+                passwordMessage: ""
             }
         );
     },
 
-    postLogin: (req, res) => {
+    postLogin: async (req, res) => {
+
+        const errors = req.session.validationErrors;
+        if (errors) {
+
+            const emailErrors = errors.filter(error => error.path === 'email').map(error => error.msg);
+            const passwordErrors = errors.filter(error => error.path === 'password').map(error => error.msg);
+
+            req.session.validationErrors = null;
+            return res.render('./admin/login',
+                {
+                    view: { title: "Login | Funkoshop" },
+                    emailMessage: emailErrors,
+                    passwordMessage: passwordErrors
+                }
+            );
+
+        }
+
         const { email, password } = req.body;
         const emailValidation = userCredentials.email == email;
         const passwordValidation = userCredentials.password == password;
         req.session.isLogged = emailValidation && passwordValidation;
-        if(req.session.isLogged){
+        if (req.session.isLogged) {
             return res.redirect('/admin');
         }
-        return res.status(401).send('Credenciales inválidas')
+        // return res.status(401).send('Credenciales inválidas')
 
-        // res.send('Solicitud de login. User: ' + email + ', Password: ' + password + ` Las credenciales coinciden: ${isLogged}`);
+        return res.render('./admin/login',
+            {
+                view: { title: "Login | Funkoshop" },
+                emailMessage: "Credenciales inválidas",
+                passwordMessage: "Credenciales inválidas"
+            }
+        );
+
+
     },
 
     getRegister: async (req, res) => {

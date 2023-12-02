@@ -50,10 +50,6 @@
                 </ul>
             </nav>
 
-
-
-
-
             <% } else { %>
 
                 <nav class="navbar container">
@@ -87,6 +83,11 @@
                         <li class="navbar__item">
                             <a class="navbar__cart" href="/shop/cart">
                                 <img src="/img/icons/cart-icon.svg" alt="Ícono del carrito de compras">
+                                <span class="navbar__cart-badge">
+                                    <% if(locals.shopCart !=undefined){%>
+                                        <%= locals.shopCart.reduce((total, item)=> total + parseInt(item.quantity),0);%>                                            
+                                            <%}else{%>0<%} %>
+                                </span>
                             </a>
                         </li>
                     </ul>

@@ -49,7 +49,7 @@
 
 .item__quantity {
     position: relative;
-    left:1.2rem;
+    left: 1.2rem;
     font-size: var(--font-xsmall);
     color: var(--light-font-solid);
     background-color: var(--dark-700);
@@ -58,11 +58,11 @@
     transition: background .3s ease-in-out;
 }
 
-.item__quantity:nth-child(3){    
+.item__quantity:nth-child(3) {
     grid-row-start: 3;
 }
 
-.item__quantity:hover{
+.item__quantity:hover {
     cursor: pointer;
     background-color: var(--primary-solid);
 }
@@ -78,6 +78,7 @@
 
 .item__submit:hover {
     background: var(--primary-900);
+    scale: 1.03;
     cursor: pointer;
 }
 

@@ -3,8 +3,8 @@
     <main class="container listado__productos"> <!-- admin -->
 
         <div class="buscador">
-            <i class="fa-solid fa-magnifying-glass" style="color: #1f1f1f;"></i>
-            <input type="text" placeholder="    código, nombre o categoría">
+            <img src="../img/icons/search_icon.svg" alt="ícono de búsqueda">
+            <input type="text" placeholder="Código, nombre o categoría">
         </div>
 
         <div>
@@ -16,10 +16,10 @@
                     <i class="fa-solid fa-square-plus" style="color: #ff3333;"></i>
                 </div>
             </div>
-            
+
 
             <table class="tabla__productos">
-                
+
                 <thead>
                     <tr class="primera__fila">
                         <th scope="col">ID</th>
@@ -32,13 +32,21 @@
 
                 <% items.forEach( item=> { %>
 
-                    <tr>
-                        <td><%= item.product_id%></td>
-                        <td><%= item.product_sku%></td>
-                        <td><%= item.product_name%></td>
-                        <td class="admin__item-licence-name"><%= item.licence_name%></td>
-                        <td><img src="../img/icons/edit_pencil.svg"></img></td>
-                        <td><img src="../img/icons/delete_trash.svg"></img></td>
+                    <tr class="admin__table-line">
+                        <td>
+                            <%= item.product_id%>
+                        </td>
+                        <td>
+                            <%= item.product_sku%>
+                        </td>
+                        <td>
+                            <%= item.product_name%>
+                        </td>
+                        <td class="admin__item-category-name">
+                            <%= item.category_name%>
+                        </td>
+                        <td class="admin__table-icon"><img src="../img/icons/edit_pencil.svg"></img></td>
+                        <td class="admin__table-icon"><img src="../img/icons/delete_trash.svg"></img></td>
                     </tr>
 
                     <% }); %>
@@ -48,5 +56,6 @@
 
     </main>
 
+    <script src="https://kit.fontawesome.com/a4f9efcdf1.js" crossorigin="anonymous"></script>
 
     <%- include('../partials/footer')%>

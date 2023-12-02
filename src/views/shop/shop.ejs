@@ -4,7 +4,7 @@
         <aside class="shop__filters">
             <div>
                 <label class="shop__filters-title" for="search">BUSCAR</label>
-                <input type="text" name="search" id="search" placeholder="Item o categoría">
+                <input type="text" name="search" id="search" placeholder="Item o categoría" autocomplete="off">
             </div>
             <div>
                 <label class="shop__filters-title" for="orderby">ORDENAR POR</label>
@@ -19,9 +19,9 @@
                 <span class="shop__filters-title">PRECIO</span>
                 <div class="shop__filters-minmax">
                     <label for="min">MIN</label>
-                    <input type="text" name="min" id="min" placeholder="0">
+                    <input type="number" name="min" id="min" min="0" max="99000" placeholder="0" step="1000">
                     <label for="max">- MAX</label>
-                    <input type="text" name="max" id="max" placeholder="0">
+                    <input type="number" name="max" id="max" min="0" max="99000" placeholder="0" step="1000">
                 </div>
             </div>
             <div>
