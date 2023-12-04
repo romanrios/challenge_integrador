@@ -1,47 +1,61 @@
 <%- include('../partials/header')%>
 
-<main class="container">
-    <H1>EDITAR ITEM</H1>
-    <label for="categoria">Categoria:</label>
-    <select name="categoria" id="categoria">
-        <option value="opc1" selected>Figuras</option>
-        <option value="opc2">Coleccionables</option>
-        <option value="opc3">Dibujos</option>
-    </select>
-    <label for="licencia">Licencia:</label>
-    <select name="licencia" id="licencia">
-        <option value="opc1" selected>Star Wars</option>
-        <option value="opc2">Pokemon</option>
-        <option value="opc3">Harry Potter</option>
-    </select>
-    <label for="nombre">Nombre del Producto:</label>
-    <input type="text" name="nombre" id="nombre" value="Kakashi Hatake Shippuden Saga">
-    <textarea name="descripcion" id="descripcion" cols="30" rows="10"
-        placeholder="Descripcion del producto">Figura Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori.  </textarea>
-    <label for="sku">SKU</label>
-    <input type="text" name="sku" id="sku" value="NAR001012">
-    <label for="">Precio:</label>
-    <input type="text" name="precio" id="precio" value="1.799,00">
-    <label for="stock">Stock</label>
-    <input type="text" name="stock" id="stock" value="10">
-    <label for="descuento">Descuento:</label>
-    <input type="text" name="descuento" id="descuento" value="10">
-    <label for="cuotas">Cuotas:</label>
-    <select name="cuotas" id="cuotas">
-        <option value="opc1">3 Cuotas sin Interes</option>
-        <option value="opc2" selected>6 Cuotas sin Interes</option>
-        <label for="imagenes">Imagenes</label>
-        <input type="file" value="Elegir Archivos">
-        <span>No se ha seleccionado ningun archivo</span>
-        <div>
-            <img src="../../img/harry-potter/harry-1.webp" alt="">
-            <p>Frente</p>
-            <img src="../../img/harry-potter/harry-box.webp" alt="">
-            <p>Caja</p>
+    <main class="container edit__main">
+        <H1>EDITAR ITEM</H1>
+        <div class="editar-item">
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" id="categoria">
+                <option value="opc1" selected>Figuras</option>
+                <option value="opc2">Coleccionables</option>
+                <option value="opc3">Dibujos</option>
+            </select>
+            <label for="licencia">Licencia:</label>
+            <select name="licencia" id="licencia">
+                <option value="opc1" selected>Star Wars</option>
+                <option value="opc2">Pokemon</option>
+                <option value="opc3">Harry Potter</option>
+            </select>
         </div>
-        <a href="#">Modificar Producto</a>
-        <a href="@">Cancelar</a>
-    </select>
-</main>
+        <div class="editar-item">
+            <label for="nombre">Nombre del Producto:</label>
+            <input type="text" name="nombre" id="nombre" value="Kakashi Hatake Shippuden Saga">
+        </div>
+        <textarea name="descripcion" id="descripcion" cols="30" rows="10"
+            placeholder="Descripcion del producto">Figura Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori.  </textarea>
+        <div class="editar-item">
+            <label for="sku">SKU:</label>
+            <input type="text" name="sku" id="sku" value="NAR001012">
+            <label for="">Precio:</label>
+            <input type="text" name="precio" id="precio" value="1.799,00">
+            <label for="stock">Stock</label>
+            <input type="text" name="stock" id="stock" value="10" class="input-numerico">>
+        </div>
+        <div class="editar-item">
+            <label for="descuento" id="descuento">Descuento:</label>
+            <input type="text" name="descuento" value="10" class="input-numerico">
+            <label for="cuotas">Cuotas:</label>
+            <select name="cuotas" id="cuotas">
+                <option value="opc1">3 Cuotas sin Interes</option>
+                <option value="opc2" selected>6 Cuotas sin Interes</option>
+            </select>
+        </div>
+        <div class="agregar-imagen">
+            <label for="imagenes">Imagenes:</label>
+            <input type="file" value="Elegir Archivos">
+            <!-- <span>No se ha seleccionado ningun archivo</span> -->
+        </div>
+        <div class="imagenes">
+            <div class="imagen-titulo">
+                <img src="../../img/harry-potter/harry-1.webp" alt="">
+                <p>Frente</p>
+            </div>
+            <div class="imagen-titulo">
+                <img src="../../img/harry-potter/harry-box.webp" alt="">
+                <p>Caja</p>
+            </div>
+        </div>
+        <a href="#" class="boton">Modificar Producto</a>
 
-<%- include('../partials/footer')%>
+    </main>
+
+    <%- include('../partials/footer')%>
