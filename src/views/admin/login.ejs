@@ -6,20 +6,24 @@
 
             <form action="" method="post">
 
-                <div class="centrar login__datos">
+                <div class="login__centrar login__datos">
                     <label for="email">Email:</label>
                     <input type="text" name="email" id="email" placeholder="roman@gmail.com">
-                    <p class="login__error-message"><%= emailMessage %></p>
-                    
+                    <p class="login__error-message">
+                        <%= emailMessage %>
+                    </p>
+
                 </div>
 
-                <div class="centrar login__datos">
+                <div class="login__centrar login__datos">
                     <label for="password">Contraseña:</label>
                     <input type="password" name="password" id="password" placeholder="roman123">
-                    <p class="login__error-message"><%= passwordMessage %></p>
+                    <p class="login__error-message">
+                        <%= passwordMessage %>
+                    </p>
                 </div>
 
-                <div class="centrar ingresar">
+                <div class="login__centrar ingresar">
                     <button class="boton" type="submit">Ingresar</button>
                     <div>
                         <input class="login__checkbox" type="checkbox" id="recordarme" name="recordarme">

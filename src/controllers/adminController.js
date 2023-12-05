@@ -1,26 +1,23 @@
-const { getAllItems } = require('../services/itemsServices')
+const { getAllItems, getOne } = require('../services/itemsServices')
+const { getAllLicences } = require('../services/licencesServices')
 
 module.exports = {
 
     getAdmin: async (req, res) => {
         const items = await getAllItems();
-        if (req.session.isLogged) {
-            return res.render('./admin/admin',
-                {
-                    view: { title: "Admin | Funkoshop" },
-                    items: items
-                }
-            );
-        } else {
-            // si no está logueado}
-            return res.redirect('/auth/login')
-        }
+        return res.render('./admin/admin',
+            {
+                view: { title: "Admin | Funkoshop" },
+                items: items
+            });
     },
 
     getCreate: async (req, res) => {
+        const licences = await getAllLicences();
         res.render('./admin/create',
             {
                 view: { title: "Admin | Funkoshop" },
+                licences: licences
             }
         );
     },
@@ -28,9 +25,14 @@ module.exports = {
     postCreate: (req, res) => res.send('Página de admin:postCreate'),
 
     getEdit: async (req, res) => {
+        const id = req.params.id;
+        const item = await getOne({ product_id: id });
+        const licences = await getAllLicences();
         res.render('./admin/edit',
             {
-                view: { title: "Edit | Funkoshop" },
+                view: { title: "Admin | Funkoshop" },
+                item: item[0],
+                licences: licences
             }
         );
     },
@@ -39,7 +41,7 @@ module.exports = {
 
     delete: async (req, res) => {
         const productId = req.params.id;
-        res.send('Esta es la Ruta DELETE para el product_id: '+ productId)
+        res.send('Esta es la Ruta DELETE para el product_id: ' + productId)
     },
 };
 
