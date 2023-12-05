@@ -1,4 +1,4 @@
-.centrar {
+.login__centrar {
     display: flex;
     align-items: center;
 }
@@ -41,6 +41,7 @@
     border: none;
     border-bottom: 2px solid var(--primary-900);
     padding: 0.5rem;
+    outline: none;
 }
 
 .ingresar {

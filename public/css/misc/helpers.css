@@ -4,6 +4,8 @@ html {
     font-family: var(--base-font);
     font-size: 62.5%;
     color: var(--dark-solid);
+
+    scroll-behavior: smooth;
 }
 
 
@@ -39,7 +41,7 @@ img {
 }
 
 .boton {
-    background-color: var(--primary-900);
+    background-color: var(--primary-solid);
     padding: 8px 16px;
     color: var(--light-font-solid);
     border: none;

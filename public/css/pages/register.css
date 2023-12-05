@@ -1,0 +1,83 @@
+.register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: var(--spacing-68) auto;
+}
+
+
+.register h2 {
+    font-size: var(--font-jumbo);
+    font-family: var(--alternative-font);
+    margin-bottom: var(--spacing-36);
+}
+
+.register h3 {
+    font-family: var(--alternative-font);
+    font-size: var(--font-xlarge);
+    font-weight: 500;
+    margin-bottom: var(--spacing-48);
+    text-align: center;
+}
+
+.register__datos {
+    display: grid;
+    grid-template-columns: 22rem 35rem;
+    margin-bottom: var(--spacing-48);
+}
+
+.register__datos label {
+    font-size: var(--font-large);
+}
+
+.register__datos input {
+    font-family: var(--base-font);
+    font-size: var(--font-medium);
+    border: none;
+    border-bottom: 2px solid var(--primary-900);
+    padding: 0.5rem;
+    outline: none;
+}
+
+
+.register__centrar {
+    display: flex;
+    justify-content: center;
+    margin: var(--spacing-36) 0;
+}
+
+
+
+
+
+.register__button {
+    padding: var(--spacing-12) var(--spacing-28);
+    font-family: var(--primary-font);
+    font-size: var(--font-xsmall);
+    margin: 0 2rem;
+    cursor: pointer;
+}
+
+.register__button:hover {
+    background-color: var(--primary-900);
+    scale: 1.3 !important;
+}
+
+
+
+.register__checkbox {
+    accent-color: var(--primary-solid);
+    transform: scale(1.2);
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+
+.register__acceptTermsText{
+    font-size: var(--font-medium);
+}
+
+.register__acceptTermsText a{
+    color: var(--secondary-solid);
+}

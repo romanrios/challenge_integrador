@@ -7,7 +7,6 @@ module.exports = {
             const [rows] = await conn.query('SELECT * FROM licences;');
             return rows;
         } catch (error) {
-
             const e = {
                 isError: true,
                 message: `Error al consultar los datos: ${error}`
@@ -18,5 +17,4 @@ module.exports = {
         }
     },
 
-
-}
+};

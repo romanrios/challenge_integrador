@@ -1,0 +1,129 @@
+.create__main h1 {
+    margin-top: var(--spacing-48);
+    margin-bottom: var(--spacing-36);
+    font-family: var(--alternative-font);
+    color: var(--font-jumbo);
+    font-size: var(--font-jumbo);
+}
+
+.create__main {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.create__main select {
+    max-width: 23%;
+    font-size: var(--font-medium);
+    font-family: var(--base-font);
+    font-weight: 500;
+    border-radius: 6px;
+    width: 53rem;
+    height: 4.5rem;
+}
+
+.create__main label {
+    font-size: var(--font-large);
+}
+
+.create__main .editar-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 2% 2% 2% 0%;
+    margin-bottom: 1%;
+    align-items: center;
+}
+
+.create__main .agregar-imagen {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-top: 2%;
+}
+
+
+ /* inputs */
+.create__main .agregar-imagen input {
+    margin: 0.7% 0% 0% 2%;
+}
+
+.create__main .editar-item input {
+    border: none;
+    border-bottom: 2px solid var(--primary-solid);
+    width: 20%;
+    font-size: var(--font-medium);
+}
+
+.create__main .input-numerico {
+    width: 7% !important;
+}
+
+.create__main input {
+    width: 70%;
+    padding-bottom: 0.3rem;
+    outline: none;
+}
+
+.edit__product-name{
+    width:50% !important;
+}
+
+
+ /* others */
+.create__main .editar-item {
+    gap: var(--spacing-12);
+}
+
+.create__main textarea {  
+    max-width: 100%;
+    font-size: var(--font-medium);
+    font-family: var(--base-font);
+    padding: var(--spacing-8);
+    margin-top: var(--spacing-12);
+    margin-bottom: var(--spacing-20);
+    resize: both;
+
+}
+
+.create__main div img {
+    border-bottom: 1px solid var(--primary-solid);
+}
+
+.create__main .imagenes {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    height: 15%;
+    gap: 10%;
+    margin-top: 3%;
+}
+
+.create__main .imagen-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create__main .boton {
+    width: 24.2rem;
+    margin-top: var(--spacing-48);
+    margin-bottom: var(--spacing-68);
+    padding-top: var(--spacing-20);
+    padding-bottom: var(--spacing-20);
+    text-align: center;
+    justify-content: center;
+    font-size: var(--font-small);
+    font-weight: 700;
+    color: var(--light-font-solid);
+    background-color: var(--primary-solid);
+}
+
+.create__main .boton:hover{
+    scale: 1.03;
+    background-color: var(--primary-900);
+}
+
+

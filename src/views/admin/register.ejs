@@ -1,22 +1,49 @@
 <%- include('../partials/header')%>
 
-<main class="container">
-    <h1>CREA TU CUENTA</h1>
-    <h2>Completa el formulario para ser parte del mundo de los Funkos</h2>
-    <form action="">
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" id="nombre">
-        <label for="Apellido">Apellido:</label>
-        <input type="text" name="" id="">
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email">
-        <label for="password">Contraseña:</label>
-        <input type="password" name="password" id="password">
-        <label for="password2">Repita Contraseña</label>
-        <input type="password" name="password2" id="password2">
-        <p><input type="checkbox">Acepto&nbsp;<a href="#">Terminos y Condiciones</a></p>
-        <p></p>
-    </form>
-</main>
+    <main class="container">
+        <div class="register">
 
-<%- include('../partials/footer')%>
+            <h2>CREA TU CUENTA</h2>
+            <h3>Completa el formulario para ser parte del mundo de los Funkos</h3>
+
+            <form action="">
+
+                <div class="register__datos">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+
+                <div class="register__datos">
+                    <label for="Apellido">Apellido:</label>
+                    <input type="text" name="" id="">
+                </div>
+
+                <div class="register__datos">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
+                </div>
+
+                <div class="register__datos">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" name="password" id="password">
+                </div>
+
+                <div class="register__datos">
+                    <label for="password2">Repita Contraseña:</label>
+                    <input type="password" name="password2" id="password2">
+                </div>
+
+                <div class="register__centrar">
+                    <div>
+                        <a class="boton register__button">Registrar</a>
+                        <input class="register__checkbox" type="checkbox" id="acceptTerms" name="acceptTerms">
+                        <span class="register__acceptTermsText">Acepto <a href="#">Términos y Condiciones</a></span>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </main>
+
+    <%- include('../partials/footer')%>
