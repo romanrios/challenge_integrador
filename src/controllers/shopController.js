@@ -42,12 +42,10 @@ module.exports = {
 
         const { quantity } = req.body;
         const itemId = req.params.id;
-        const items = await getAllItems();
 
         if (!req.session.shopCart) {
             req.session.shopCart = [];
         } req.session.shopCart.push({ id: itemId, quantity: quantity });
-        // const myCart = res.locals.shopCart;
 
         res.redirect('/shop');
 

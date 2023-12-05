@@ -13,7 +13,7 @@
                 <h2 class="admin__title">LISTADO DE PRODUCTOS</h2>
                 <div>
                     <h3>AGREGAR</h3>
-                    <i class="fa-solid fa-square-plus" style="color: #ff3333;"></i>
+                    <a href="/admin/create"><i class="fa-solid fa-square-plus" style="color: #ff3333;"></i></a>
                 </div>
             </div>
 
@@ -45,8 +45,21 @@
                         <td class="admin__item-category-name">
                             <%= item.category_name%>
                         </td>
-                        <td class="admin__table-icon"><img src="../img/icons/edit_pencil.svg"></img></td>
-                        <td class="admin__table-icon"><img src="../img/icons/delete_trash.svg"></img></td>
+                        <td class="admin__table-icon"><a href="/admin/edit/<%= item.product_id %>"><img
+                                    src="../img/icons/edit_pencil.svg"></a></img></td>
+
+
+
+                        <td class="admin__table-icon">
+                            <form action="/admin/delete/<%= item.product_id %>?_method=DELETE" method="POST">
+                                <button type="submit"
+                                    style="background: none; border: none; padding: 0; margin: 0; cursor: pointer;">
+                                    <img src="/img/icons/delete_trash.svg" alt="Eliminar">
+                                </button>
+                            </form>
+                        </td>
+
+
                     </tr>
 
                     <% }); %>
