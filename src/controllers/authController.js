@@ -17,6 +17,7 @@ module.exports = {
 
     postLogin: async (req, res) => {
 
+        // gestión de errores en email y password
         const errors = req.session.validationErrors;
         if (errors) {
 
@@ -31,9 +32,9 @@ module.exports = {
                     passwordMessage: passwordErrors
                 }
             );
-
         }
 
+        // validación de email y password
         const { email, password } = req.body;
         const emailValidation = userCredentials.email == email;
         const passwordValidation = userCredentials.password == password;
@@ -41,7 +42,6 @@ module.exports = {
         if (req.session.isLogged) {
             return res.redirect('/admin');
         }
-        // return res.status(401).send('Credenciales inválidas')
 
         return res.render('./admin/login',
             {

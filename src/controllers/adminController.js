@@ -13,7 +13,7 @@ module.exports = {
             );
         } else {
             // si no está logueado}
-            return res.redirect('../auth/login')
+            return res.redirect('/auth/login')
         }
     },
 
@@ -37,6 +37,11 @@ module.exports = {
 
     postEdit: (req, res) => res.send('Página de admin:postEdit'),
 
-    delete: (req, res) => res.send('Página de admin:delete'),
-
+    delete: async (req, res) => {
+        const productId = req.params.id;
+        res.send('Esta es la Ruta DELETE para el product_id: '+ productId)
+    },
 };
+
+
+
