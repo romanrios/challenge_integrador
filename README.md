@@ -2,7 +2,7 @@
 
 ### Tienda en línea de figuras coleccionables Funkos.
 
-Este es proyecto conforma el challenge integrador para el curso de NodeJS del Programa Codo a Codo 4.0.
+Este proyecto conforma el challenge integrador para el curso de NodeJS del Programa Codo a Codo 4.0.
 
 
 ## Acceder al sitio
