@@ -13,9 +13,9 @@ module.exports = {
             }
             return e;
         }
-        // finally {
-        //     await conn.releaseConnection();
-        // }
+        finally {
+            await conn.releaseConnection();
+        }
     },
 
 };
