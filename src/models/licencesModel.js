@@ -5,6 +5,7 @@ module.exports = {
     getAll: async () => {
         try {
             const [rows] = await conn.query('SELECT * FROM licences;');
+            await conn.releaseConnection();
             return rows;
         } catch (error) {
             const e = {
