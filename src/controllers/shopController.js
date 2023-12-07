@@ -1,9 +1,5 @@
 const { getAllItems, getOne } = require('../services/itemsServices')
 
-
-
-
-
 module.exports = {
 
     getShop: async (req, res) => {

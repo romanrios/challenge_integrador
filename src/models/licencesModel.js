@@ -12,7 +12,8 @@ module.exports = {
                 message: `Error al consultar los datos: ${error}`
             }
             return e;
-        } finally {
+        }
+        finally {
             await conn.releaseConnection();
         }
     },
