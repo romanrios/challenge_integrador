@@ -8,19 +8,20 @@ const pool = mysql.createPool({
     database: process.env.DB_NAME,
     port: process.env.DB_PORT,
     waitForConnections: true,
-    connectionLimit: 2,
+    connectionLimit: 10,
     queueLimit: 0
 });
 
 // Testing ( node ./src/config/conn.js )
-pool.getConnection((error, connection) => {
-    if (error) {
-        console.error('Hubo un error de conexión a la base de datos: ', error);
-    } else {
-        console.log('Conexión a la base de datos fue exitosa.');
-        connection.release();
-    }
-});
+
+// pool.getConnection((error, connection) => {
+//     if (error) {
+//         console.error('Hubo un error de conexión a la base de datos: ', error);
+//     } else {
+//         console.log('Conexión a la base de datos fue exitosa.');
+//         connection.release();
+//     }
+// });
 
 // Export
 module.exports = {

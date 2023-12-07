@@ -6,9 +6,9 @@ const { conn } = require('../config/conn')
 
 const sessionStore = new MySQLStore({
     endConnectionOnClose: true,
-    clearExpired: true,
-    expiration: 5 * 60 * 1000, // conexión de la sesión expira en 5 minutos
-    checkExpirationInterval: 1 * 60 * 1000
+    // clearExpired: true,
+    // expiration: 5 * 60 * 1000,
+    // checkExpirationInterval: 1 * 60 * 1000
 }, conn);
 
 function initSession() {
@@ -17,7 +17,7 @@ function initSession() {
         resave: false,
         saveUninitialized: false,
         store: sessionStore,
-        cookie: { maxAge: 5 * 60 * 1000 } // cookie expira en 5 minutos
+        // cookie: { maxAge: 5 * 60 * 1000 }
     });
 };
 
