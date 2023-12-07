@@ -21,7 +21,6 @@ module.exports = {
 
         try {
             const [rows] = await conn.query('SELECT products.*, licences.licence_name FROM products LEFT JOIN licences ON products.licence_id = licences.licence_id WHERE ?;', params);
-            await conn.releaseConnection();
             return rows;
         } catch (error) {
             const e = {
