@@ -11,9 +11,8 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     queueLimit: 0,
 
-    maxIdle: 1,
-    idleTimeout: 1000,
-    keepAliveInitialDelay: false,
+    enableKeepAlive: false
+
 });
 
 // Testing ( node ./src/config/conn.js )
