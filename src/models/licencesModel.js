@@ -4,23 +4,17 @@ module.exports = {
 
     getAll: async () => {
         try {
-            const connection = await conn.getConnection();
-            try {
-                const [rows] = await connection.query('SELECT * FROM licences;');
-                return rows;
-            } catch (error) {
-                const e = {
-                    isError: true,
-                    message: `Error al consultar los datos: ${error}`
-                }
-                return e;
-            }
-            finally {
-                await connection.release();
-            }
+            const [rows] = await conn.query('SELECT * FROM licences;');
+            return rows;
         } catch (error) {
-            console.error('Error al obtener la conexión del pool:', error);
+            const e = {
+                isError: true,
+                message: `Error al consultar los datos: ${error}`
+            }
+            return e;
+        } finally {
+            await conn.releaseConnection();
         }
+    },
 
-    }
 };

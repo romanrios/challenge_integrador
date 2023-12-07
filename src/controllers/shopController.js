@@ -40,12 +40,12 @@ module.exports = {
 
     addItem: async (req, res) => {
 
-        const { quantity } = req.body;
-        const itemId = req.params.id;
+        // const { quantity } = req.body;
+        // const itemId = req.params.id;
 
-        if (!req.session.shopCart) {
-            req.session.shopCart = [];
-        } req.session.shopCart.push({ id: itemId, quantity: quantity });
+        // if (!req.session.shopCart) {
+        //     req.session.shopCart = [];
+        // } req.session.shopCart.push({ id: itemId, quantity: quantity });
 
         res.redirect('/shop');
 
