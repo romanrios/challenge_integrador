@@ -5,8 +5,8 @@ module.exports = {
 
     home: async (req, res) => {
 
-        req.session.count = req.session.count ? ++req.session.count : 1;
-        console.log(req.session.count);
+        // req.session.count = req.session.count ? ++req.session.count : 1;
+        // console.log(req.session.count);
 
         const items = await getAllItems();
         const licences = await getAllLicences();
