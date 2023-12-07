@@ -9,7 +9,7 @@ const mainRoutes = require('./src/routes/mainRoutes');
 const shopRoutes = require('./src/routes/shopRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
 const authRoutes = require('./src/routes/authRoutes');
-const { initSession } = require('./src/utils/sessions');
+// const { initSession } = require('./src/utils/sessions');
 
 // Template Engines
 app.set('view engine', 'ejs');
@@ -22,12 +22,12 @@ app.use(express.urlencoded()); // Idem anterior.    (deprecated?)
 app.use(methodOverride('_method')); // para PUT y DELETE
 
 // User Session
-app.use(initSession());
-app.use((req, res, next) => {
-    res.locals.isLogged = req.session.isLogged;  
-    res.locals.shopCart = req.session.shopCart;
-    next();
-});
+// app.use(initSession());
+// app.use((req, res, next) => {
+//     res.locals.isLogged = req.session.isLogged;  
+//     res.locals.shopCart = req.session.shopCart;
+//     next();
+// });
 
 // Rutas
 app.use('/', mainRoutes);
