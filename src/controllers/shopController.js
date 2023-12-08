@@ -10,7 +10,23 @@ module.exports = {
                 {
                     title: "Shop | Funkoshop"
                 },
-                items: items
+                items: items,
+                category: "Funkos"
+            }
+        );
+    },
+
+    getFilterShop: async (req, res) => {
+        let category = String(req.params.id);
+        const items = await getAllItems();
+        res.render('./shop/shop',
+            {
+                view:
+                {
+                    title: category
+                },
+                items: items,
+                category: category,
             }
         );
     },

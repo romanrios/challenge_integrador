@@ -16,10 +16,10 @@ app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, './src/views'));
 
 // Middlewares de configuración
-app.use(express.static(path.resolve(__dirname, 'public'))); // define carpeta de archivos estáticos
 app.use(express.json()); // Para POST. Parsea datos, los convierte a un formato que entienda el servidor
 app.use(express.urlencoded()); // Idem anterior.    (deprecated?)
 app.use(methodOverride('_method')); // para PUT y DELETE
+app.use(express.static(path.resolve(__dirname, 'public'))); // define carpeta de archivos estáticos
 
 // User Session
 app.use(initSession());
