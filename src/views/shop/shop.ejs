@@ -8,13 +8,34 @@
             </div>
             <div>
                 <label class="shop__filters-title" for="orderby">ORDENAR POR</label>
-                <select name="orderby" id="orderby">
-                    <option value="az">A-Z</option>
-                    <option value="za">Z-A</option>
-                    <option value="desc">Mayor precio</option>
-                    <option value="asc">Menor precio</option>
+                <!-- js vinculado para esta función -->
+
+
+                <select name="orderby" id="orderby" onchange="redirectToSelected()">
+
+                    <% const categories=[...new Set(items.map(item=> item.category_name))];
+                        categories.forEach(category=>{ %>
+                        <option value="/shop/filter-category/<%=category%>" <% if
+                            (showFirst.toLowerCase()==category.toLowerCase()){ %> selected <% } %>> <%=category%>
+                        </option>
+                        <% })%>
+
+
+                            <% const licences=[...new Set(items.map(item=> item.licence_name))];
+                                licences.forEach(licence=>{ %>
+                                <option value="/shop/filter-licence/<%=licence%>" <% if
+                                    (showFirst.toLowerCase()==licence.toLowerCase()){ %> selected <% } %>>
+                                        <%=licence%>
+                                </option>
+                                <% })%>
+
+
+
+
+
                 </select>
             </div>
+
             <div>
                 <span class="shop__filters-title">PRECIO</span>
                 <div class="shop__filters-minmax">
@@ -45,11 +66,12 @@
 
                 <!-- Sort items by category -->
                 <% const compareFunction=(a, b)=> {
-                    if (a.category_name.toLowerCase() == category.toLowerCase())
+
+                    if (a[sortBy].toLowerCase() == showFirst.toLowerCase())
                     {
                     return -1;
                     }
-                    else if (b.category_name.toLowerCase() == category.toLowerCase())
+                    else if (b[sortBy].toLowerCase() == showFirst.toLowerCase())
                     {
                     return 1;
                     } else {
@@ -70,8 +92,8 @@
                                         <span class="card-item__tag">NUEVO</span>
                                         <% }%>
 
-                                            <img class="card-item__img--front" src="../../<%= item.img_front%>" alt="">
-                                            <img class="card-item__img--back" src="../../<%= item.img_back%>" alt="">
+                                            <img class="card-item__img--front" src="<%= item.img_front%>" alt="">
+                                            <img class="card-item__img--back" src="<%= item.img_back%>" alt="">
                                 </picture>
                                 <div class="card-item__content">
                                     <p class="card-item__licence">
@@ -106,10 +128,8 @@
             </div>
         </section>
 
-
-
-
-
     </main>
+
+    <script src="/js/shop.js"></script>
 
     <%- include('../partials/footer')%>

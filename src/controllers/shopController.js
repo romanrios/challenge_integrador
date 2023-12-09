@@ -11,25 +11,47 @@ module.exports = {
                     title: "Shop | Funkoshop"
                 },
                 items: items,
-                category: "Funkos"
+                showFirst: "Funkos",
+                sortBy: 'category_name'
             }
         );
     },
 
-    getFilterShop: async (req, res) => {
-        let category = String(req.params.id);
+    getShopFilterCategory: async (req, res) => {
+        const showFirst = req.params.id;
         const items = await getAllItems();
+        const sortBy = 'category_name';
         res.render('./shop/shop',
             {
                 view:
                 {
-                    title: category
+                    title: "Shop | Funkoshop"
                 },
-                items: items,
-                category: category,
+                items,
+                showFirst: showFirst,
+                sortBy
             }
         );
     },
+
+    getShopFilterLicence: async (req, res) => {
+        const showFirst = req.params.id;
+        const items = await getAllItems();
+        const sortBy = 'licence_name';
+        res.render('./shop/shop',
+            {
+                view:
+                {
+                    title: "Shop | Funkoshop"
+                },
+                items,
+                showFirst: showFirst,
+                sortBy
+            }
+        );
+    },
+
+    
 
     getItem: async (req, res) => {
         const id = req.params.id;
@@ -43,7 +65,7 @@ module.exports = {
                     title: "Shop | Funkoshop"
                 },
                 item: item[0],
-                related: related
+                related,
             }
         );
     },

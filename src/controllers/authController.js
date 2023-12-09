@@ -17,7 +17,7 @@ module.exports = {
 
     postLogin: async (req, res) => {
 
-        // gestión de errores en email y password
+        // capturamos los errores de validation
         const errors = req.session.validationErrors;
         if (errors) {
 

@@ -1,17 +1,18 @@
 require('dotenv').config();
-
 const express = require('express');
-const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
-const PORT = process.env.PORT;
 const mainRoutes = require('./src/routes/mainRoutes');
 const shopRoutes = require('./src/routes/shopRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
 const authRoutes = require('./src/routes/authRoutes');
 const { initSession } = require('./src/utils/sessions');
+const cors = require('cors');
 
-// Template Engines
+const app = express();
+const PORT = process.env.PORT;
+
+// Template Engine
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, './src/views'));
 
@@ -20,11 +21,12 @@ app.use(express.json()); // Para POST. Parsea datos, los convierte a un formato 
 app.use(express.urlencoded()); // Idem anterior.    (deprecated?)
 app.use(methodOverride('_method')); // para PUT y DELETE
 app.use(express.static(path.resolve(__dirname, 'public'))); // define carpeta de archivos estáticos
+app.use(cors()); // Necesario para el intercambio de datos entre distintos servidores
 
 // User Session
 app.use(initSession());
 app.use((req, res, next) => {
-    res.locals.isLogged = req.session.isLogged;  
+    res.locals.isLogged = req.session.isLogged;
     res.locals.shopCart = req.session.shopCart;
     next();
 });
@@ -35,6 +37,7 @@ app.use('/shop', shopRoutes);
 app.use('/admin', adminRoutes);
 app.use('/auth', authRoutes);
 
+// Error 404
 app.use((req, res) => { res.status(404).send('La página que buscas no existe. Error 404.') });
 
 // Método para correr el server
