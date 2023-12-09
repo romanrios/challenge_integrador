@@ -1,71 +1,78 @@
 <%- include('../partials/header')%>
 
-    <main id="shop" class="container"> <!-- Shop -->
-        <aside class="shop__filters">
-            <div>
-                <label class="shop__filters-title" for="search">BUSCAR</label>
-                <input type="text" name="search" id="search" placeholder="Item o categoría" autocomplete="off">
+<main id="shop" class="container"> <!-- Shop -->
+    <aside class="shop__filters">
+
+        <form action="/shop/find/" method="GET">
+            <label class="shop__filters-title" for="search">BUSCAR</label>
+            <div class="search-input-container">
+                <input type="text" name="id" id="search" placeholder="Personaje o colección" autocomplete="off">
+                <button class="search-icon" type="submit" aria-label="Buscar">
+                    <iconify-icon icon="fa:search"></iconify-icon>
+                </button>
             </div>
-            <div>
-                <label class="shop__filters-title" for="orderby">ORDENAR POR</label>
-                <!-- js vinculado para esta función -->
+        </form>
+
+        <div>
+            <label class="shop__filters-title" for="orderby">ORDENAR POR</label>
+            <!-- js vinculado para esta función -->
 
 
-                <select name="orderby" id="orderby" onchange="redirectToSelected()">
+            <select name="orderby" id="orderby" onchange="redirectToSelected()">
 
-                    <% const categories=[...new Set(items.map(item=> item.category_name))];
+                <% const categories=[...new Set(items.map(item=> item.category_name))];
                         categories.forEach(category=>{ %>
-                        <option value="/shop/filter-category/<%=category%>" <% if
+                <option value="/shop/filter-category/<%=category%>" <% if
                             (showFirst.toLowerCase()==category.toLowerCase()){ %> selected <% } %>> <%=category%>
-                        </option>
-                        <% })%>
+                </option>
+                <% })%>
 
 
-                            <% const licences=[...new Set(items.map(item=> item.licence_name))];
+                <% const licences=[...new Set(items.map(item=> item.licence_name))];
                                 licences.forEach(licence=>{ %>
-                                <option value="/shop/filter-licence/<%=licence%>" <% if
+                <option value="/shop/filter-licence/<%=licence%>" <% if
                                     (showFirst.toLowerCase()==licence.toLowerCase()){ %> selected <% } %>>
-                                        <%=licence%>
-                                </option>
-                                <% })%>
+                    <%=licence%>
+                </option>
+                <% })%>
 
 
 
 
 
-                </select>
+            </select>
+        </div>
+
+        <div>
+            <span class="shop__filters-title">PRECIO</span>
+            <div class="shop__filters-minmax">
+                <label for="min">MIN</label>
+                <input type="number" name="min" id="min" min="0" max="99000" placeholder="0" step="1000">
+                <label for="max">- MAX</label>
+                <input type="number" name="max" id="max" min="0" max="99000" placeholder="0" step="1000">
             </div>
-
-            <div>
-                <span class="shop__filters-title">PRECIO</span>
-                <div class="shop__filters-minmax">
-                    <label for="min">MIN</label>
-                    <input type="number" name="min" id="min" min="0" max="99000" placeholder="0" step="1000">
-                    <label for="max">- MAX</label>
-                    <input type="number" name="max" id="max" min="0" max="99000" placeholder="0" step="1000">
-                </div>
+        </div>
+        <div>
+            <span class="shop__filters-title" for="filter">FILTRAR</span>
+            <div class="shop__filters-checkboxes">
+                <input type="checkbox" name="filter" id="news" value="">
+                <label for="news">NUEVOS</label>
+                <input type="checkbox" name="filter" id="offers" value="">
+                <label for="offers">OFERTAS</label>
+                <input type="checkbox" name="filter" id="limited" value="">
+                <label for="limited">EDICIÓN ESPECIAL</label>
+                <input type="checkbox" name="filter" id="fav" value="">
+                <label for="fav">FAVORITOS</label>
             </div>
-            <div>
-                <span class="shop__filters-title" for="filter">FILTRAR</span>
-                <div class="shop__filters-checkboxes">
-                    <input type="checkbox" name="filter" id="news" value="">
-                    <label for="news">NUEVOS</label>
-                    <input type="checkbox" name="filter" id="offers" value="">
-                    <label for="offers">OFERTAS</label>
-                    <input type="checkbox" name="filter" id="limited" value="">
-                    <label for="limited">EDICIÓN ESPECIAL</label>
-                    <input type="checkbox" name="filter" id="fav" value="">
-                    <label for="fav">FAVORITOS</label>
-                </div>
-            </div>
-        </aside>
+        </div>
+    </aside>
 
-        <section class="shop__content">
+    <section class="shop__content">
 
-            <ul class="shop__items">
+        <ul class="shop__items">
 
-                <!-- Sort items by category -->
-                <% const compareFunction=(a, b)=> {
+            <!-- Sort items by category -->
+            <% const compareFunction=(a, b)=> {
 
                     if (a[sortBy].toLowerCase() == showFirst.toLowerCase())
                     {
@@ -83,53 +90,53 @@
                     sortedItems.forEach( item=> {
                     %>
 
-                    <li class="shop__item">
-                        <article class="card-item">
-                            <a class="card-item__link" href="/shop/item/<%= item.product_id%>">
-                                <picture class="card-item__cover">
+            <li class="shop__item">
+                <article class="card-item">
+                    <a class="card-item__link" href="/shop/item/<%= item.product_id%>">
+                        <picture class="card-item__cover">
 
-                                    <% if(item.product_id> 13){%>
-                                        <span class="card-item__tag">NUEVO</span>
-                                        <% }%>
+                            <% if(item.product_id> 13){%>
+                            <span class="card-item__tag">NUEVO</span>
+                            <% }%>
 
-                                            <img class="card-item__img--front" src="<%= item.img_front%>" alt="">
-                                            <img class="card-item__img--back" src="<%= item.img_back%>" alt="">
-                                </picture>
-                                <div class="card-item__content">
-                                    <p class="card-item__licence">
-                                        <%= item.licence_name%>
-                                    </p>
-                                    <h4 class="card-item__name">
-                                        <%= item.product_name%>
-                                    </h4>
-                                    <p class="card-item__price">
-                                        $ <%= item.product_price%>
-                                    </p>
-                                    <p class="card-item__promo">
-                                        <%= item.dues%> CUOTAS SIN INTERÉS
-                                    </p>
-                                </div>
-                            </a>
-                        </article>
-                    </li>
-                    <% }); %>
+                            <img class="card-item__img--front" src="<%= item.img_front%>" alt="">
+                            <img class="card-item__img--back" src="<%= item.img_back%>" alt="">
+                        </picture>
+                        <div class="card-item__content">
+                            <p class="card-item__licence">
+                                <%= item.licence_name%>
+                            </p>
+                            <h4 class="card-item__name">
+                                <%= item.product_name%>
+                            </h4>
+                            <p class="card-item__price">
+                                $ <%= item.product_price%>
+                            </p>
+                            <p class="card-item__promo">
+                                <%= item.dues%> CUOTAS SIN INTERÉS
+                            </p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+            <% }); %>
 
-            </ul>
+        </ul>
 
 
-            <div class="shop__page-buttons">
-                <div class="shop__page-button"> <iconify-icon icon="tabler:chevron-left"></iconify-icon> </div>
-                <div class="shop__page-button">1</div>
-                <div class="shop__page-button">2</div>
-                <div class="shop__page-button">3</div>
-                <div class="shop__page-button">4</div>
-                <div class="shop__page-button">5</div>
-                <div class="shop__page-button"> <iconify-icon icon="tabler:chevron-right"></iconify-icon> </div>
-            </div>
-        </section>
+        <div class="shop__page-buttons">
+            <div class="shop__page-button"> <iconify-icon icon="tabler:chevron-left"></iconify-icon> </div>
+            <div class="shop__page-button">1</div>
+            <div class="shop__page-button">2</div>
+            <div class="shop__page-button">3</div>
+            <div class="shop__page-button">4</div>
+            <div class="shop__page-button">5</div>
+            <div class="shop__page-button"> <iconify-icon icon="tabler:chevron-right"></iconify-icon> </div>
+        </div>
+    </section>
 
-    </main>
+</main>
 
-    <script src="/js/shop.js"></script>
+<script src="/js/shop.js"></script>
 
-    <%- include('../partials/footer')%>
+<%- include('../partials/footer')%>
