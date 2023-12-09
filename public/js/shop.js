@@ -1,4 +1,4 @@
-// links funkos / remeras / llaveros
+// links menú "ORDENAR POR"
 function redirectToSelected() {
     var selectElement = document.getElementById("orderby");
     var selectedValue = selectElement.options[selectElement.selectedIndex].value;

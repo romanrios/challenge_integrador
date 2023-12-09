@@ -64,8 +64,9 @@
 }
 
 .shop__filters-minmax>label {
-    font-size: var(--font-small);
+    font-size: var(--font-xsmall);
     font-weight: 500;
+    text-align: end;
 }
 
 #min,
@@ -74,7 +75,7 @@
     text-align: center;
     font-size: var(--font-medium);
     border-radius: 6px;
-    width: 7.3rem;
+    max-width: 32%;
 }
 
 .shop__filters-checkboxes {
@@ -168,8 +169,23 @@
 }
 
 @media screen and (min-width: 1024px) {
-    .shop__item {
-        max-width: 30%;
+    .shop__filters{
+        font-size: 90%;
+        min-width: 23rem;
+        margin-right: 3rem;
     }
 
+}
+
+
+/* Estilo para ocultar los botones de incremento y decremento en los campos numéricos */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
 }
