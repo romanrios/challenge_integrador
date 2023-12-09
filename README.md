@@ -7,8 +7,7 @@ Este proyecto conforma el challenge integrador para el curso de NodeJS del Progr
 
 ## Acceder al sitio
 
-Desplegado en Vercel: https://romanrios-funkoshop.vercel.app/home
-
+Desplegado en Vercel: [https://romanrios-funkoshop.vercel.app/home](https://romanrios-funkoshop.vercel.app/home)
 
 ## ⚙ Herramientas utilizadas:
 
