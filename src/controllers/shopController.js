@@ -17,6 +17,28 @@ module.exports = {
         );
     },
 
+    getShopFind: async (req, res) => {
+        itemIdToFind = req.query.id;
+        const items = await getAllItems();
+
+        // Realizar la búsqueda en tu conjunto de datos, por ejemplo, en `items`
+        const matchingItems = items.filter(item =>
+            item.product_name.toLowerCase().includes(itemIdToFind.toLowerCase()) || item.licence_name.toLowerCase().includes(itemIdToFind.toLowerCase())
+        );
+
+        res.render('./shop/shop',
+            {
+                view:
+                {
+                    title: "Shop | Funkoshop"
+                },
+                items: matchingItems,
+                showFirst: "Funkos",
+                sortBy: 'category_name'
+            }
+        );
+    },
+
     getShopFilterCategory: async (req, res) => {
         const showFirst = req.params.id;
         const items = await getAllItems();
@@ -51,7 +73,7 @@ module.exports = {
         );
     },
 
-    
+
 
     getItem: async (req, res) => {
         const id = req.params.id;
@@ -79,7 +101,17 @@ module.exports = {
 
         if (!req.session.shopCart) {
             req.session.shopCart = [];
-        } req.session.shopCart.push({ id: itemId, quantity: quantity });
+        }
+        // Buscar si ya existe un elemento con el mismo id
+        const existingItem = req.session.shopCart.find(item => item.id === itemId);
+
+        if (existingItem) {
+            // Si el elemento ya existe, actualiza la cantidad
+            existingItem.quantity = Number(existingItem.quantity) + Number(quantity);
+        } else {
+            // Si el elemento no existe, agrégalo al array
+            req.session.shopCart.push({ id: itemId, quantity: quantity });
+        }
 
         res.redirect('/shop');
 
@@ -100,6 +132,20 @@ module.exports = {
                 myCart: myCart
             }
         );
+    },
+
+    deleteCart: async (req, res) => {
+        itemIdToDelete = req.params.id;
+
+        // Buscar el índice del elemento con el id especificado
+        const indexToDelete = req.session.shopCart.findIndex(item => item.id == itemIdToDelete);
+
+        if (indexToDelete !== -1) {
+            // Si se encontró el elemento, eliminarlo del array
+            req.session.shopCart.splice(indexToDelete, 1);
+        }
+
+        res.redirect('/shop/cart');
     },
 
     postCart: (req, res) => res.send('Página de Shop:postCart')

@@ -87,7 +87,7 @@
                             <a class="navbar__cart" href="/shop/cart">
                                 <img src="/img/icons/cart-icon.svg" alt="Ícono del carrito de compras">
 
-                                <% if(locals.shopCart !=undefined){%>
+                                <% if(locals.shopCart && locals.shopCart != 0){%>
                                     <span class="navbar__cart-badge">
                                         <% if(locals.shopCart !=undefined){%>
                                             <%= locals.shopCart.reduce((total, item)=> total +
