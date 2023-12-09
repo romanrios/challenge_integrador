@@ -4,7 +4,7 @@ const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 
 const { conn } = require('../config/conn')
-const sessionStore = new MySQLStore({}, conn);
+const sessionStore = new MySQLStore({ /* options */ }, conn);
 
 function initSession() {
     return session({

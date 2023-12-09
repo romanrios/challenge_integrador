@@ -9,7 +9,6 @@ const validateInput = (req, res, next) => {
 
         // Almacena los errores en el objeto req
         req.session.validationErrors = errors.array();
-
     }
 
     next();
