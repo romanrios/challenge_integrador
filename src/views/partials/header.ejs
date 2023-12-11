@@ -4,15 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-
     <link rel="stylesheet" href="/css/index.css">
-
-    <title>
-        <%= view.title%>
-    </title>
-
+    <title> <%= view.title%> </title>
 </head>
 
 <body>
@@ -20,89 +14,90 @@
     <header> <!-- Inicio Header -->
 
         <% if(locals.isLogged) { %>
+        <!-- Si el usuario está logueado muestra este header -->
 
-            <nav class="navbar container">
-                <picture class="navbar__logo">
-                    <a href="/home">
-                        <img src="/img/branding/logo_light_horizontal.svg" alt="Isologotipo de la marca Funkoshop">
-                    </a>
-                </picture>
-                <ul class="navbar__menu">
-                    <li class="navbar__item with-submenu">
-                        <a class="navbar__link with-icon" href="/shop">VER TIENDA<iconify-icon
-                                icon="tabler:chevron-down"></iconify-icon></a>
-                        <ul class="submenu">
-                            <li class="submenu__item">
-                                <a href="/shop/filter-category/funkos" class="submenu__link">Funkos</a>
-                            </li>
-                            <li class="submenu__item">
-                                <a href="/shop/filter-category/remeras" class="submenu__link">Remeras</a>
-                            </li>
-                            <li class="submenu__item">
-                                <a href="/shop/filter-category/llaveros" class="submenu__link">Llaveros</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="navbar__link" href="/admin">ADMIN</a>
-                    </li class="navbar__item">
-                    <li>
-                        <a class="navbar__link" href="/auth/logout">SALIR</a>
-                    </li>
-
-                </ul>
-            </nav>
-
-            <% } else { %>
-
-                <nav class="navbar container">
-                    <picture class="navbar__logo">
-                        <a href="/home">
-                            <img src="/img/branding/logo_light_horizontal.svg" alt="Isologotipo de la marca Funkoshop">
-                        </a>
-                    </picture>
-                    <ul class="navbar__menu">
-                        <li class="navbar__item with-submenu">
-                            <a class="navbar__link with-icon" href="/shop">SHOP<iconify-icon
-                                    icon="tabler:chevron-down"></iconify-icon></a>
-                            <ul class="submenu">
-                                <li class="submenu__item">
-                                    <a href="/shop/filter-category/funkos" class="submenu__link">Funkos</a>
-                                </li>
-                                <li class="submenu__item">
-                                    <a href="/shop/filter-category/remeras" class="submenu__link">Remeras</a>
-                                </li>
-                                <li class="submenu__item">
-                                    <a href="/shop/filter-category/llaveros" class="submenu__link">Llaveros</a>
-                                </li>
-                            </ul>
+        <nav class="navbar container">
+            <picture class="navbar__logo">
+                <a href="/home">
+                    <img src="/img/branding/logo_light_horizontal.svg" alt="Isologotipo de la marca Funkoshop">
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item with-submenu">
+                    <a class="navbar__link with-icon" href="/shop">VER TIENDA<iconify-icon
+                            icon="tabler:chevron-down"></iconify-icon></a>
+                    <ul class="submenu">
+                        <li class="submenu__item">
+                            <a href="/shop/filter-category/funkos" class="submenu__link">Funkos</a>
                         </li>
-                        <li>
-                            <a class="navbar__link" href="/contact">CONTACTO</a>
-                        </li class="navbar__item">
-                        <li>
-                            <a class="navbar__link" href="/auth/login">LOGIN</a>
+                        <li class="submenu__item">
+                            <a href="/shop/filter-category/remeras" class="submenu__link">Remeras</a>
                         </li>
-                        <li class="navbar__item">
-                            <a class="navbar__cart" href="/shop/cart">
-                                <img src="/img/icons/cart-icon.svg" alt="Ícono del carrito de compras">
-
-                                <% if(locals.shopCart && locals.shopCart != 0){%>
-                                    <span class="navbar__cart-badge">
-                                        <% if(locals.shopCart !=undefined){%>
-                                            <%= locals.shopCart.reduce((total, item)=> total +
-                                                parseInt(item.quantity),0);%>
-                                                <%}else{%>0<%} %>
-                                    </span>
-                                    <%} %>
-
-                            </a>
+                        <li class="submenu__item">
+                            <a href="/shop/filter-category/llaveros" class="submenu__link">Llaveros</a>
                         </li>
                     </ul>
-                </nav>
+                </li>
+                <li>
+                    <a class="navbar__link" href="/admin">ADMIN</a>
+                </li class="navbar__item">
+                <li>
+                    <a class="navbar__link" href="/auth/logout">SALIR</a>
+                </li>
 
+            </ul>
+        </nav>
 
+        <% } else { %>
+        <!-- Si no está logueado, muestra este otro header -->
 
+        <nav class="navbar container">
+            <picture class="navbar__logo">
+                <a href="/home">
+                    <img src="/img/branding/logo_light_horizontal.svg" alt="Isologotipo de la marca Funkoshop">
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item with-submenu">
+                    <a class="navbar__link with-icon" href="/shop">SHOP<iconify-icon
+                            icon="tabler:chevron-down"></iconify-icon></a>
+                    <ul class="submenu">
+                        <li class="submenu__item">
+                            <a href="/shop/filter-category/funkos" class="submenu__link">Funkos</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="/shop/filter-category/remeras" class="submenu__link">Remeras</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="/shop/filter-category/llaveros" class="submenu__link">Llaveros</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="navbar__link" href="/contact">CONTACTO</a>
+                </li class="navbar__item">
+                <li>
+                    <a class="navbar__link" href="/auth/login">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__cart" href="/shop/cart">
+                        <img src="/img/icons/cart-icon.svg" alt="Ícono del carrito de compras">
 
-                <% } %>
+                        <!-- CART BADGE -->
+                        <% if(locals.shopCart && locals.shopCart != 0){%>
+                        <span class="navbar__cart-badge">
+                            <% if(locals.shopCart !=undefined){%>
+                            <!-- reduce itera sobre cada elemento y acumula un valor resultante -->
+                            <%= locals.shopCart.reduce((total, item)=> total +
+                                                parseInt(item.quantity),0);%>
+                            <%}else{%>0<%} %>
+                        </span>
+                        <%} %>
+
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <% } %>
     </header> <!-- Fin Header -->

@@ -1,4 +1,4 @@
-const { getAllItems, getOne } = require('../services/itemsServices')
+const { getAllItems, getOne } = require('../services/productsServices')
 
 module.exports = {
 
@@ -21,7 +21,7 @@ module.exports = {
         itemIdToFind = req.query.id;
         const items = await getAllItems();
 
-        // Realizar la búsqueda en tu conjunto de datos, por ejemplo, en `items`
+        // Realizamos la búsqueda en el array items con el método .includes
         const matchingItems = items.filter(item =>
             item.product_name.toLowerCase().includes(itemIdToFind.toLowerCase()) || item.licence_name.toLowerCase().includes(itemIdToFind.toLowerCase())
         );
@@ -42,6 +42,7 @@ module.exports = {
     getShopFilterCategory: async (req, res) => {
         const showFirst = req.params.id;
         const items = await getAllItems();
+        // Ordenamos por categoría (Funkos, Remeras, Llaveros)
         const sortBy = 'category_name';
         res.render('./shop/shop',
             {
@@ -59,6 +60,7 @@ module.exports = {
     getShopFilterLicence: async (req, res) => {
         const showFirst = req.params.id;
         const items = await getAllItems();
+        // Ordenamos por licencia (Star wars, Pokemon, Harry potter)
         const sortBy = 'licence_name';
         res.render('./shop/shop',
             {
@@ -77,6 +79,7 @@ module.exports = {
 
     getItem: async (req, res) => {
         const id = req.params.id;
+        // Pasamos un parámetro para el WHERE de la consulta a la BBDD
         const item = await getOne({ product_id: id });
         const licence = item[0].licence_name;
         const related = await getOne({ licence_name: licence });
@@ -94,7 +97,7 @@ module.exports = {
 
 
 
-    addItem: async (req, res) => {
+    addItemToCart: async (req, res) => {
 
         const { quantity } = req.body;
         const itemId = req.params.id;
@@ -109,7 +112,7 @@ module.exports = {
             // Si el elemento ya existe, actualiza la cantidad
             existingItem.quantity = Number(existingItem.quantity) + Number(quantity);
         } else {
-            // Si el elemento no existe, agrégalo al array
+            // Si el elemento no existe, lo agrega al array
             req.session.shopCart.push({ id: itemId, quantity: quantity });
         }
 

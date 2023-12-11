@@ -1,4 +1,4 @@
-const { getAllItems } = require('../services/itemsServices');
+const { getAllItems } = require('../services/productsServices');
 const { getAllLicences } = require('../services/licencesServices');
 
 module.exports = {
@@ -7,17 +7,14 @@ module.exports = {
 
         // req.session.count = req.session.count ? ++req.session.count : 1;
         // console.log(req.session.count);
-
+        
         const items = await getAllItems();
         const licences = await getAllLicences();
 
+        // Ejemplo de manejo de error al consultar la BBDD
         if (items.isError || licences.isError) {
             return res.status(500).send('Hemos tenido un error al consultar los datos')
         }
-
-        // const starwarsItems = items.filter(item => item.licence_name === 'Star Wars');
-        // const starwarsItem = starwarsItems[Math.floor(Math.random() * starwarsItems.length)];
-
 
         return res.render('./home',
             {
@@ -27,8 +24,6 @@ module.exports = {
                 },
                 items: items,
                 licences: licences
-                // starwarsItem: starwarsItem,
-
             }
         );
     },
@@ -39,8 +34,8 @@ module.exports = {
         }
     }),
 
-
     about: (req, res) => res.send('Página de Sobre Nosotros'),
+    
     faqs: (req, res) => res.send('Página de Preguntas Frecuentes'),
 
 };

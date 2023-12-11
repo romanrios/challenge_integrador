@@ -1,74 +1,73 @@
 <%- include('../partials/header')%>
 
-    <main class="container listado__productos"> <!-- admin -->
+<main class="container listado__productos"> <!-- admin -->
 
-        <div class="buscador">
-            <img src="../img/icons/search_icon.svg" alt="ícono de búsqueda">
-            <input type="text" placeholder="Código, nombre o categoría">
-        </div>
+    <div class="buscador">
+        <img src="../img/icons/search_icon.svg" alt="ícono de búsqueda">
+        <input type="text" placeholder="Código, nombre o categoría">
+    </div>
 
-        <div>
+    <div>
 
-            <div class="encabezado__lista__productos">
-                <h2 class="admin__title">LISTADO DE PRODUCTOS</h2>
-                <div>
-                    <h3>AGREGAR</h3>
-                    <a href="/admin/create"><i class="fa-solid fa-square-plus" style="color: #ff3333;"></i></a>
-                </div>
+        <div class="encabezado__lista__productos">
+            <h2 class="admin__title">LISTADO DE PRODUCTOS</h2>
+            <div>
+                <!-- Create item -->
+                <h3>AGREGAR</h3>
+                <a href="/admin/create"><i class="fa-solid fa-square-plus" style="color: #ff3333;"></i></a>
             </div>
-
-
-            <table class="tabla__productos">
-
-                <thead>
-                    <tr class="primera__fila">
-                        <th scope="col">ID</th>
-                        <th scope="col">Código</th>
-                        <th scope="col">Nombre del Producto</th>
-                        <th scope="col">Categoría</th>
-                    </tr>
-                </thead>
-
-
-                <% items.forEach( item=> { %>
-
-                    <tr class="admin__table-line">
-                        <td>
-                            <%= item.product_id%>
-                        </td>
-                        <td>
-                            <%= item.product_sku%>
-                        </td>
-                        <td>
-                            <%= item.product_name%>
-                        </td>
-                        <td class="admin__item-category-name">
-                            <%= item.category_name%>
-                        </td>
-                        <td class="admin__table-icon"><a href="/admin/edit/<%= item.product_id %>"><img
-                                    src="../img/icons/edit_pencil.svg"></a></img></td>
-
-
-
-                        <td class="admin__table-icon">
-                            <form action="/admin/delete/<%= item.product_id %>?_method=DELETE" method="POST">
-                                <button type="submit"
-                                    style="background: none; border: none; padding: 0; margin: 0; cursor: pointer;">
-                                    <img src="/img/icons/delete_trash.svg" alt="Eliminar">
-                                </button>
-                            </form>
-                        </td>
-
-
-                    </tr>
-
-                    <% }); %>
-
-            </table>
         </div>
 
-    </main>
 
-    <script src="https://kit.fontawesome.com/a4f9efcdf1.js" crossorigin="anonymous"></script>
+        <table class="tabla__productos">
 
-    <%- include('../partials/footer')%>
+            <thead>
+                <tr class="primera__fila">
+                    <th scope="col">ID</th>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nombre del Producto</th>
+                    <th scope="col">Categoría</th>
+                </tr>
+            </thead>
+
+            <!-- Iteramos sobre items para mostrar el listado -->
+            <% items.forEach( item=> { %>
+
+            <tr class="admin__table-line">
+                <td>
+                    <%= item.product_id%>
+                </td>
+                <td>
+                    <%= item.product_sku%>
+                </td>
+                <td>
+                    <%= item.product_name%>
+                </td>
+                <td class="admin__item-category-name">
+                    <%= item.category_name%>
+                </td>
+                <td class="admin__table-icon"><a href="/admin/edit/<%= item.product_id %>"><img
+                            src="../img/icons/edit_pencil.svg"></a></img></td>
+
+                <!-- Delete item -->
+                <td class="admin__table-icon">
+                    <form action="/admin/delete/<%= item.product_id %>?_method=DELETE" method="POST">
+                        <button type="submit"
+                            style="background: none; border: none; padding: 0; margin: 0; cursor: pointer;">
+                            <img src="/img/icons/delete_trash.svg" alt="Eliminar">
+                        </button>
+                    </form>
+                </td>
+
+            </tr>
+
+            <% }); %>
+
+        </table>
+    </div>
+
+</main>
+
+<script src="https://kit.fontawesome.com/a4f9efcdf1.js" crossorigin="anonymous"></script>
+
+<%- include('../partials/footer')%>

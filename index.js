@@ -14,17 +14,18 @@ const PORT = process.env.PORT;
 
 // Template Engine
 app.set('view engine', 'ejs');
-app.set('views', path.resolve(__dirname, './src/views'));
+app.set('views', path.resolve(__dirname, './src/views')); // agregamos path para Vercel
 
 // Middlewares de configuración
-app.use(express.json()); // Para POST. Parsea datos, los convierte a un formato que entienda el servidor
-app.use(express.urlencoded()); // Idem anterior.    (deprecated?)
+app.use(express.json()); // Nos ahorra usar JSON.parse() al recibir datos y JSON.stringify() para enviarlos. Permite capturar json en req.body.
+app.use(express.urlencoded()); // Permite capturar datos de formulario (application/x-www-form-urlencoded) con req.body    (deprecated?)
 app.use(methodOverride('_method')); // para PUT y DELETE
 app.use(express.static(path.resolve(__dirname, 'public'))); // define carpeta de archivos estáticos
 app.use(cors()); // Necesario para el intercambio de datos entre distintos servidores
 
 // User Session
 app.use(initSession());
+// variables que estarán disponibles en todas las views
 app.use((req, res, next) => {
     res.locals.isLogged = req.session.isLogged;
     res.locals.shopCart = req.session.shopCart;
