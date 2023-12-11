@@ -1,4 +1,4 @@
-const { getAllItems, getOne } = require('../services/itemsServices')
+const { getAllItems, getOne } = require('../services/productsServices')
 const { getAllLicences } = require('../services/licencesServices')
 
 module.exports = {
