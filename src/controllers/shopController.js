@@ -10,7 +10,7 @@ module.exports = {
                 {
                     title: "Shop | Funkoshop"
                 },
-                items: items,
+                items,
                 showFirst: "Funkos",
                 sortBy: 'category_name'
             }
@@ -51,7 +51,7 @@ module.exports = {
                     title: "Shop | Funkoshop"
                 },
                 items,
-                showFirst: showFirst,
+                showFirst,
                 sortBy
             }
         );
@@ -69,7 +69,7 @@ module.exports = {
                     title: "Shop | Funkoshop"
                 },
                 items,
-                showFirst: showFirst,
+                showFirst,
                 sortBy
             }
         );
@@ -102,6 +102,7 @@ module.exports = {
         const { quantity } = req.body;
         const itemId = req.params.id;
 
+        // almacenamos id y cantidad de session BBDD
         if (!req.session.shopCart) {
             req.session.shopCart = [];
         }
@@ -123,7 +124,8 @@ module.exports = {
 
     getCart: async (req, res) => {
         const items = await getAllItems();
-        const myCart = res.locals.shopCart;
+        // const myCart = res.locals.shopCart;
+        // también podríamos pedir directamente req.session.shopCart
 
         res.render('./shop/cart',
             {
@@ -131,8 +133,8 @@ module.exports = {
                 {
                     title: "Shop | Funkoshop"
                 },
-                items: items,
-                myCart: myCart
+                items,
+                // myCart
             }
         );
     },

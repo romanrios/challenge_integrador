@@ -8,7 +8,7 @@ module.exports = {
         return res.render('./admin/admin',
             {
                 view: { title: "Admin | Funkoshop" },
-                items: items
+                items
             });
     },
 
@@ -17,7 +17,7 @@ module.exports = {
         res.render('./admin/create',
             {
                 view: { title: "Admin | Funkoshop" },
-                licences: licences
+                licences
             }
         );
     },
@@ -32,7 +32,7 @@ module.exports = {
             {
                 view: { title: "Admin | Funkoshop" },
                 item: item[0],
-                licences: licences
+                licences
             }
         );
     },

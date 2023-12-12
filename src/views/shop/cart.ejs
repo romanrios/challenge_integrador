@@ -14,15 +14,18 @@
         totalPrice=0;
 
         function toCurrency(number) {
+            // usamos toLocaleString método nativo de JS que convierte a formato moneda
             return number.toLocaleString('es-AR', {
             style: 'currency' , currency: 'ARS' }); }
             
+            // si el carrito no está vacío iteramos
         if(locals.shopCart && locals.shopCart != 0){ locals.shopCart.forEach(cartItem=> {
-        totalItems += 1*cartItem.quantity;
-        totalPrice += cartItem.quantity * items.find(item=> item.product_id == cartItem.id).product_price;
-        %>
-
-
+            // operaciones para mostrar información en resumen
+            totalItems += 1*cartItem.quantity;
+            totalPrice += cartItem.quantity * items.find(item=> item.product_id == cartItem.id).product_price;
+            
+            // card con cada elemento del carrito 
+            %>
     <ul id="card_<%= locals.shopCart%>" class="cart__component-container">
         <li class="cart__component">
             <article>
@@ -44,8 +47,9 @@
                 <div class="cart__component-quantity">
                     <input id="quantity_<%=cartItem.id%>" class="item__input" type="text" name="quantity"
                         value="<%= cartItem.quantity %>">
-                    <button id="add_<%=cartItem.id%>" class="cart__component-quantity-button" type="button">+</button>
-                    <button id="subtract_<%=cartItem.id%>" class="cart__component-quantity-button"
+                    <button onclick="addToCart('<%=cartItem.id%>', '<%= cartItem.quantity %>', 1)" id="add_<%=cartItem.id%>"
+                        class="cart__component-quantity-button" type="button">+</button>
+                    <button onclick="addToCart('<%=cartItem.id%>', '<%= cartItem.quantity %>', -1)" id="subtract_<%=cartItem.id%>" class="cart__component-quantity-button"
                         type="button">-</button>
                 </div>
             </div>

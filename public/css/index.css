@@ -14,10 +14,8 @@
 @import url("./partials/footer.css");
 
 /* COMPONENTS */
-@import url("./components/buttons.css");
 @import url("./components/card.css");
 @import url("./components/slider.css");
-@import url("./components/form.css");
 
 /* PAGES */
 @import url("./pages/home.css");

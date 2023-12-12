@@ -2,8 +2,14 @@
 
 *,
 *::after,
-*::before {
+*::before
+
+/* after y before seleccionan cualquier elemento colocado antes o después */
+    {
     margin: 0px;
     padding: 0px;
+
     box-sizing: border-box;
+    /* Indica que el tamaño total de un elemento incluye el contenido,
+    el relleno (padding)y el borde, sin afectar el tamaño total del elemento. */
 }
