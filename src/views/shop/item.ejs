@@ -23,6 +23,7 @@
             <p class="item__price">$ <%= item.product_price%>
             </p>
 
+            <!-- Agregar al carrito -->
             <form class="item__cart" action="/shop/item/<%= item.product_id%>/add" method="post">
 
                 <input id="quantity" class="item__input" type="text" name="quantity" value="1" autocomplete="off">

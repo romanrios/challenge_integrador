@@ -9,13 +9,15 @@ const pool = mysql.createPool({
     database: process.env.DB_NAME,
     port: process.env.DB_PORT,
 
-    // Indica que el pool debe esperar si todas las conexiones están ocupadas y ha alcanzado el límite de conexiones (connectionLimit) antes de arrojar un error.
+    // Indica que el pool debe esperar si todas las conexiones están ocupadas y ha
+    // alcanzado el límite de conexiones (connectionLimit) antes de arrojar un error.
     waitForConnections: true,
 
     // Establece el límite máximo de conexiones que el pool puede manejar simultáneamente.
     connectionLimit: 10,
 
-    // Establece el límite de la cola para conexiones pendientes. Un valor de 0 significa que no hay límite.
+    // Establece el límite de la cola para conexiones pendientes.
+    // Un valor de 0 significa que no hay límite.
     queueLimit: 0
 });
 

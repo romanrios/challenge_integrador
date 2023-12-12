@@ -22,8 +22,8 @@ module.exports = {
                 {
                     title: "Home | Funkoshop"
                 },
-                items: items,
-                licences: licences
+                items,
+                licences
             }
         );
     },

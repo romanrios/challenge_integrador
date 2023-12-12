@@ -1,5 +1,6 @@
 /* ANIMATIONS */
 
+/* Utilizada en card.css */ 
 @keyframes fade {
     0% {
         opacity: 0;
@@ -9,3 +10,4 @@
         opacity: 1;
     }
 }
+

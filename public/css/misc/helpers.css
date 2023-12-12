@@ -11,7 +11,10 @@ html {
 
 
 a {
+    /* quita subrayado de hipervínculos */
     text-decoration: none;
+
+    /* heredar de su elemento contenerdor */
     color: inherit;
     font-family: inherit;
 }
@@ -24,6 +27,7 @@ footer {
 
 ul,
 ol {
+    /* elimina formato predeterminado de listas */
     list-style-type: none;
 }
 
