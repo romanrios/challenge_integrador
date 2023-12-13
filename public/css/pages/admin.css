@@ -123,3 +123,10 @@ thead th:nth-child(6) {
 .admin__table-icon img:hover {
     scale:1.1;
 }
+
+
+@media screen and (max-width: 480px) {
+    .listado__productos {
+        font-size: 80%;
+    }
+}

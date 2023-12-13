@@ -78,7 +78,7 @@
 }
 
 .edit__main textarea {  
-    max-width: 100%;
+    max-width: 95%;
     font-size: var(--font-medium);
     font-family: var(--base-font);
     padding: var(--spacing-8);

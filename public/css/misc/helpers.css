@@ -8,7 +8,9 @@ html {
     scroll-behavior: smooth;
 }
 
-
+main {
+    min-height: 73vh;
+}
 
 a {
     /* quita subrayado de hipervínculos */

@@ -174,8 +174,24 @@
         min-width: 23rem;
         margin-right: 3rem;
     }
+}
+
+
+@media screen and (max-width: 480px) {
+    .shop__filters{
+        font-size: 150%;
+        margin-right: 3rem;
+    }
+
+    .shop__content{
+        font-size: 150%;
+        margin-right: 3rem;
+
+    }
 
 }
+
+
 
 
 /* Estilo para ocultar los botones de incremento y decremento en los campos numéricos */

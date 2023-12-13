@@ -1,14 +1,14 @@
 <%- include('../partials/header')%>
 
-    <main class="container edit__main">
+<main class="container edit__main">
 
-        <H1>EDITAR ITEM</H1>
+    <H1>EDITAR ITEM</H1>
 
-        <div class="editar-item">
+    <div class="editar-item">
 
-            <label for="categoria">Categoría:</label>
-            <select name="categoria" id="categoria">
-                <option value="opc1" <% if(item.category_name== "Funkos"){%> selected <%}%> > Funkos </option>
+        <label for="categoria">Categoría:</label>
+        <select name="categoria" id="categoria">
+            <option value="opc1" <% if(item.category_name== "Funkos"){%> selected <%}%> > Funkos </option>
                 <option value="opc2" <% if(item.category_name== "Remeras" ){%> selected <%}%> > Remeras </option>
                 <option value="opc3" <% if(item.category_name== "Llaveros" ){%> selected <%}%> > Llaveros </option>
             </select>
@@ -16,35 +16,40 @@
             <label for="licencia">Licencia:</label>
             <select name="licencia" id="licencia">
 
-                <% licences.forEach(licence=>{ %>
-                    <option value="opc<%=licence.licence_id%>" <% if(licence.licence_name==item.licence_name ){%>
-                        selected<%}%>>
-                            <%=licence.licence_name%>
-                    </option>
-                    <% }) %>
+                <% licences.forEach(licence=>{ %> <option value="opc<%=licence.licence_id%>"
+                <% if(licence.licence_name==item.licence_name ){%> selected<%}%>>
+                            <%=licence.licence_name%> </option>
+                <% }) %>
 
-            </select>
-        </div>
-        <div class="editar-item">
-            <label for="nombre">Nombre del Producto:</label>
-            <input class="edit__product-name" type="text" name="nombre" id="nombre" value="<%= item.product_name%>">
-        </div>
-        <textarea name="descripcion" id="descripcion" cols="73" rows="6"
-            placeholder="Descripcion del producto"><%= item.product_description %></textarea>
-        <div class="editar-item">
-            <label for="sku">SKU:</label>
-            <input type="text" name="sku" id="sku" value="<%= item.product_sku %>">
-            <label for="">Precio:</label>
-            <input type="text" name="precio" id="precio" value="$ <%= item.product_price %>">
-            <label for="stock">Stock:</label>
-            <input type="text" name="stock" id="stock" value="10" class="input-numerico">
-        </div>
-        <div class="editar-item">
-            <label for="descuento" id="descuento">Descuento:</label>
-            <input type="text" name="descuento" value="10%" class="input-numerico">
-            <label for="cuotas">Cuotas:</label>
-            <select name="cuotas" id="cuotas">
-                <option value="opc1" <% if(item.dues==3 ){%>selected<%}%> >3 Cuotas sin Interés</option>
+        </select>
+    </div>
+
+    <div class="editar-item">
+        <label for="nombre">Nombre del Producto:</label>
+        <input class="edit__product-name" type="text" name="nombre" id="nombre" value="<%= item.product_name%>">
+    </div>
+
+    <textarea name="descripcion" id="descripcion" cols="73" rows="6"
+        placeholder="Descripcion del producto"><%= item.product_description %></textarea>
+
+    <div class="editar-item">
+        <label for="sku">SKU:</label>
+        <input type="text" name="sku" id="sku" value="<%= item.product_sku %>">
+
+        <label for="">Precio:</label>
+        <input type="text" name="precio" id="precio" value="$ <%= item.product_price %>">
+
+        <label for="stock">Stock:</label>
+        <input type="text" name="stock" id="stock" value="10" class="input-numerico">
+    </div>
+
+
+    <div class="editar-item">
+        <label for="descuento" id="descuento">Descuento:</label>
+        <input type="text" name="descuento" value="10%" class="input-numerico">
+        <label for="cuotas">Cuotas:</label>
+        <select name="cuotas" id="cuotas">
+            <option value="opc1" <% if(item.dues==3 ){%>selected<%}%> >3 Cuotas sin Interés</option>
                 <option value="opc2" <% if(item.dues==6 ){%>selected<%}%> >6 Cuotas sin Interés</option>
                 <option value="opc3" <% if(item.dues==12 ){%>selected<%}%> >12 Cuotas sin Interés</option>
             </select>
@@ -60,14 +65,14 @@
             <div class="imagen-titulo">
                 <img src="<%= item.img_front %>" alt="">
                 <p>Frente</p>
-            </div>
-            <div class="imagen-titulo">
-                <img src="<%= item.img_back %>" alt="">
-                <p>Caja</p>
-            </div>
-        </div>
-        <a href="#" class="boton">Modificar Producto</a>
+    </div>
+    <div class="imagen-titulo">
+        <img src="<%= item.img_back %>" alt="">
+        <p>Caja</p>
+    </div>
+    </div>
+    <a href="#" class="boton">Modificar Producto</a>
 
-    </main>
+</main>
 
-    <%- include('../partials/footer')%>
+<%- include('../partials/footer')%>
