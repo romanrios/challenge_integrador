@@ -19,7 +19,15 @@ module.exports = {
             resave: false,
             saveUninitialized: false,    
 
+            // usamos como store la BBDD
             store: sessionStore,
+
+            // Para reiniciar el tiempo de expiración en cada solicitud
+            rolling: true, 
+            
+            cookie: {
+                maxAge: 5 * 60 * 1000, // 5 minutos en milisegundos
+            },
         })
     },
     
