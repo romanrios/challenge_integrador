@@ -91,3 +91,11 @@
 .item__promo a {
     text-decoration: underline;
 }
+
+
+@media screen and (max-width: 480px) {
+    .item__info {
+        margin-top: 8rem;
+        margin-right: 2rem;
+    }
+}

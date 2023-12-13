@@ -68,12 +68,14 @@ button {
 }
 
 .cart__component-title {
+    text-transform: uppercase;
     font-size: var(--font-large);
     font-weight: 700;
     margin-bottom: var(--spacing-8)
 }
 
 .cart__component-licence {
+    text-transform: uppercase;
     font-size: var(--font-xsmall);
     font-weight: 500;
     margin-bottom: var(--spacing-20)

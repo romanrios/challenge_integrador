@@ -115,3 +115,16 @@
 .collection__link:hover {
     background-color: var(--primary-900);
 }
+
+@media screen and (max-width: 480px) {
+    .home__main {
+        font-size: 90%;
+        padding-right: 4rem;
+    }
+
+    .hero {
+        padding: 14rem 8rem;
+        background-attachment:local;
+        margin-bottom: 4rem;
+    }
+}
