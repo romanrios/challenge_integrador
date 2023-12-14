@@ -11,34 +11,21 @@ Proyecto Integrador del curso Full Stack NodeJS - Programa Codo a Codo 4.0
 
 ## ⚙ Herramientas y tecnologías utilizadas:
 
+<img src="https://github.com/romanrios/challenge_integrador/assets/122373737/96078bfc-bc80-4542-ad7c-090c8c0f10d5" width="600">
 
-<img src="https://github.com/romanrios/challenge_integrador/assets/122373737/e7d555ce-29a0-4553-8cf3-733aaa1fbe83" width="500">
-
-
-- FIGMA
-- HTML
-- CSS (Bootstrap opcional)
-- Javascript
-- Librería Glide.js
-- Git y GitHub
-- Node JS + Express JS
-- NPM
-- Arquitectura MVC
-- Template Engines (EJS)
-- MySQL y Gestores de BBDD
-- Sequelize
+Este proyecto sigue una arquitectura basada en el patrón Modelo-Vista-Controlador (MVC) para organizar y estructurar el código de la aplicación. Además, se implementa el conjunto de operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para gestionar la persistencia de datos.
 
 
 ## Descripción
 
-El sitio consta de 2 partes fundamentales, en primer lugar la tienda en
+El sitio consta de dos partes fundamentales, en primer lugar la tienda en
 línea donde los clientes podrán ver todos los productos disponibles,
 conocer su precio, stock y características. Además podrán registrarse
 para agregar sus productos favoritos al carrito y ver el subtotal que
 deben pagar.
 
 En segundo lugar, se necesita contar con las vistas necesarias para
-administrar la tienda (admin o backoffice), ver el listado de productos
+administrar la tienda (admin o back office), ver el listado de productos
 cargados y su stock, poder agregar, editar y eliminar items y sus
 propiedades y que esos cambios se reflejen en tiempo real de cara al
 cliente.
