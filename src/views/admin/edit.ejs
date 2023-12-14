@@ -36,7 +36,7 @@
         <label for="sku">SKU:</label>
         <input type="text" name="sku" id="sku" value="<%= item.product_sku %>">
 
-        <label for="">Precio:</label>
+        <label for="precio">Precio:</label>
         <input type="text" name="precio" id="precio" value="$ <%= item.product_price %>">
 
         <label for="stock">Stock:</label>
@@ -45,8 +45,8 @@
 
 
     <div class="editar-item">
-        <label for="descuento" id="descuento">Descuento:</label>
-        <input type="text" name="descuento" value="10%" class="input-numerico">
+        <label for="descuento">Descuento:</label>
+        <input id="descuento" type="text" name="descuento" value="10%" class="input-numerico">
         <label for="cuotas">Cuotas:</label>
         <select name="cuotas" id="cuotas">
             <option value="opc1" <% if(item.dues==3 ){%>selected<%}%> >3 Cuotas sin Interés</option>
@@ -57,7 +57,7 @@
 
         <div class="agregar-imagen">
             <label for="imagenes">Imágenes:</label>
-            <input type="file" value="Elegir Archivos">
+            <input id="imagenes" type="file" value="Elegir Archivos">
             <!-- <span>No se ha seleccionado ningun archivo</span> -->
         </div>
         

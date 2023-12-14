@@ -1,3 +1,8 @@
+.create__main{
+    display: flex;
+    align-items: center;
+}
+
 .create__main form{
     display: flex;
     align-items: flex-start;
@@ -78,7 +83,7 @@
 }
 
 .create__main textarea {  
-    max-width: 95%;
+    max-width: 85vw;
     font-size: var(--font-medium);
     font-family: var(--base-font);
     padding: var(--spacing-8);
@@ -124,6 +129,14 @@
 .create__main .boton:hover{
     scale: 1.03;
     background-color: var(--primary-900);
+}
+
+
+@media screen and (max-width: 480px) {
+    .create__main{
+        font-size: 110%;
+    }
+
 }
 
 

@@ -1,3 +1,8 @@
+.register__main{
+    display: flex;
+    align-items: center;
+}
+
 .register {
     display: flex;
     flex-direction: column;
