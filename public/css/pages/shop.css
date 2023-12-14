@@ -180,7 +180,6 @@
 @media screen and (max-width: 480px) {
     .shop__filters{
         font-size: 150%;
-        margin-right: 3rem;
     }
 
     .shop__content{

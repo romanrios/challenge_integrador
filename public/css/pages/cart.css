@@ -42,13 +42,13 @@ button {
 
 .cart__component {
     padding: var(--spacing-36) var(--spacing-16);
-    display: grid;    
+    display: grid;
     align-items: center;
     grid-template-columns: auto 12% 24% 5%;
     text-align: center;
     background: var(--light-bg-solid);
     box-shadow: 0px 0px 10px 0px var(--dark-300);
-    border-radius: 25px;
+    border-radius: 2.5rem;
 }
 
 .cart__component article {
@@ -57,7 +57,7 @@ button {
 }
 
 .cart__component img {
-    max-height: 118px;
+    max-height: 11.8rem;
     width: auto;
     margin-right: var(--spacing-12);
 }
@@ -214,4 +214,34 @@ button {
     font-weight: 700;
     color: var(--light-font-solid);
     background-color: var(--primary-solid);
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .login__main {
+        font-size: 110%;
+    }
+
+
+    .cart__component img {
+        display: none;
+    }
+
+
+
+
+
+
+    .cart__header {
+
+        grid-template-columns: auto 22% 24% 5%;
+
+    }   
+
+    
+    .cart__component {
+
+        grid-template-columns: auto 22% 24% 5%;
+    }
 }

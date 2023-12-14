@@ -5,8 +5,7 @@ const MySQLStore = require('express-mysql-session')(session);
 
 // Declaramos nuestra BBDD como store
 const sessionStore = new MySQLStore({     
-    // expiration: 300000, // Duración de la sesión en milisegundos 
-    // createDatabaseTable: true, // Crea automáticamente la tabla de sesiones si no existe
+    // expiration: 5 * 60 * 1000, // Duración de la sesión en milisegundos 
  }, conn);
 
 module.exports = {

@@ -39,7 +39,7 @@ app.use('/admin', adminRoutes);
 app.use('/auth', authRoutes);
 
 // Error 404
-app.use((req, res) => { res.status(404).send('La página que buscas no existe. Error 404.') });
+app.use((req, res) => { res.status(404).render('./error', {view:{title:"Oops! | Funkoshop"}}) });
 
 // Método para correr el server
 app.listen(PORT, () => { console.log(`Servidor corriendo en el puerto http://localhost:${PORT}`) });

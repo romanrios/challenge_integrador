@@ -4,12 +4,15 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
+    margin-top: 5rem;
 }
 
 .item__info {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-16);
+    margin-bottom: 5rem;
+
 }
 
 .item__licence {
@@ -93,9 +96,21 @@
 }
 
 
+/* ITEM MEDIA QUERIES */
 @media screen and (max-width: 480px) {
     .item__info {
-        margin-top: 8rem;
-        margin-right: 2rem;
+        padding-right: 4rem;
+        margin-bottom: 5rem;
+        font-size: 120%;
+    }  
+
+    .item {
+        margin-top: 5rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2;
+    }
+
+    .item__main .slider__title{
+        font-size: var(--font-jumbo);
     }
 }

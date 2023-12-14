@@ -1,6 +1,6 @@
 <%- include('../partials/header')%>
 
-    <main class="container"> <!-- login -->
+    <main class="container login__main"> <!-- login -->
         <div class="login">
             <h2>INGRESAR A MI CUENTA</h2>
 
@@ -8,7 +8,7 @@
 
                 <div class="login__centrar login__datos">
                     <label for="email">Email:</label>
-                    <input type="text" name="email" id="email" placeholder="roman@gmail.com">
+                    <input type="text" name="email" id="email" placeholder="roman@gmail.com" autocomplete="email">
                     <p class="login__error-message">
                         <%= emailMessage %>
                     </p>

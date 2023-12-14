@@ -1,3 +1,8 @@
+.login__main{
+    display: flex;
+    align-items: center;
+}
+
 .login__centrar {
     display: flex;
     align-items: center;
@@ -12,6 +17,7 @@
 }
 
 .login h2 {
+    text-align: center;
     font-size: var(--font-jumbo);
     font-family: var(--alternative-font);
     margin-bottom: var(--spacing-68);
@@ -91,15 +97,8 @@
 }
 
 
-@media screen and (max-width: 1024px) {
-    .login {
-        margin: 18rem auto;
-    }
-}
-
-
 @media screen and (max-width: 480px) {
-    .login {
-        margin: 40rem auto;
+    .login__main {
+        font-size: 110%;
     }
 }
