@@ -28,8 +28,8 @@ module.exports = {
             return res.render('./admin/login',
                 {
                     view: { title: "Login | Funkoshop" },
-                    emailMessage,
-                    passwordMessage
+                    emailMessage: emailErrors,
+                    passwordMessage: passwordErrors
                 }
             );
         }
