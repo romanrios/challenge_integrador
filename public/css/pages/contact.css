@@ -6,7 +6,9 @@
     margin-bottom: var(--spacing-36);
     line-height: 4rem;
 
-    min-height: 20vh /* for mobile */;
+    min-height: 20vh
+        /* for mobile */
+    ;
 }
 
 .contact h2 {
@@ -30,6 +32,12 @@
     gap: 10rem;
 }
 
-.contact__location{
+.contact__location {
     color: var(--dark-700)
+}
+
+@media screen and (max-width: 768px) {
+    .contact__data-container {
+        gap: 5rem;
+    }
 }

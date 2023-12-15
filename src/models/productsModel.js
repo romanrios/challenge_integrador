@@ -27,7 +27,7 @@ module.exports = {
             }
             return e;
         } finally {
-            await conn.releaseConnection();
+            conn.releaseConnection();
         }
     },
 
@@ -57,7 +57,7 @@ module.exports = {
             }
             return e;
         } finally {
-            await conn.releaseConnection();
+            conn.releaseConnection();
         }
     }
 }
