@@ -92,6 +92,7 @@
     font-size: var(--font-large);
     font-weight: 400;
     max-width: 460px;
+    text-wrap: pretty;
 }
 
 .collection__line {

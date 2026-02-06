@@ -8,6 +8,7 @@ const adminRoutes = require('./src/routes/adminRoutes');
 const authRoutes = require('./src/routes/authRoutes');
 const { initSession } = require('./src/utils/sessions');
 const cors = require('cors');
+const itemsData = require('./src/data/funko.json');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -25,10 +26,14 @@ app.use(cors()); // Necesario para el intercambio de datos entre distintos servi
 
 // User Session
 app.use(initSession());
+
 // variables que estarán disponibles en todas las views
+const CATEGORIES = [...new Set(itemsData.map(item => item.category_name))];
+
 app.use((req, res, next) => {
     res.locals.isLogged = req.session.isLogged;
     res.locals.shopCart = req.session.shopCart;
+    res.locals.categories = CATEGORIES;
     next();
 });
 

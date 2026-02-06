@@ -1,0 +1,38 @@
+[
+  {
+    "licence_id": 1,
+    "licence_key": "Harry Potter",
+    "licence_name": "Harry Potter",
+    "licence_description": "Revive la magia del mundo de Harry Potter con nuestras figuras y coleccionables."
+  },
+  {
+    "licence_id": 2,
+    "licence_key": "Pokemon",
+    "licence_name": "Pokemon",
+    "licence_description": "Entrena y colecciona a tus Pokémon favoritos en versión Funko."
+  },
+  {
+    "licence_id": 3,
+    "licence_key": "Star Wars",
+    "licence_name": "Star Wars",
+    "licence_description": "Que la Fuerza te acompañe con esta colección de una galaxia muy, muy lejana."
+  },
+  {
+    "licence_id": 4,
+    "licence_key": "Dragon Ball",
+    "licence_name": "Dragon Ball",
+    "licence_description": "Lleva el poder de los Saiyajin a tu estantería con estos Funkos épicos."
+  },
+  {
+    "licence_id": 5,
+    "licence_key": "Keychains",
+    "licence_name": "Llaveros",
+    "licence_description": "Llaveros coleccionables para llevar tus personajes favoritos a todas partes."
+  },
+  {
+    "licence_id": 6,
+    "licence_key": "Clothes",
+    "licence_name": "Remeras",
+    "licence_description": "Ropa temática inspirada en tus sagas y personajes preferidos."
+  }
+]

@@ -13,7 +13,8 @@
 
     <!-- Iteramos sobre las licencias para mostrar las colecciones -->
     <% licences.forEach(licence=> {
-            const itemsWithThisLicence = items.filter(item=> item.licence_name === licence.licence_name);
+            const licenceKey = licence.licence_key || licence.licence_name;
+            const itemsWithThisLicence = items.filter(item=> item.licence_name === licenceKey);
             const randomItem = itemsWithThisLicence[Math.floor(Math.random() * itemsWithThisLicence.length)];
             %>
 

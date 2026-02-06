@@ -27,15 +27,11 @@
                     <a class="navbar__link with-icon" href="/shop">VER TIENDA<iconify-icon
                             icon="tabler:chevron-down"></iconify-icon></a>
                     <ul class="submenu">
+                        <% (locals.categories || []).forEach(function(category) { %>
                         <li class="submenu__item">
-                            <a href="/shop/filter-category/funkos" class="submenu__link">Funkos</a>
+                            <a href="/shop/filter-category/<%= category.toLowerCase() %>" class="submenu__link"><%= category %></a>
                         </li>
-                        <li class="submenu__item">
-                            <a href="/shop/filter-category/remeras" class="submenu__link">Remeras</a>
-                        </li>
-                        <li class="submenu__item">
-                            <a href="/shop/filter-category/llaveros" class="submenu__link">Llaveros</a>
-                        </li>
+                        <% }); %>
                     </ul>
                 </li>
                 <li>
@@ -62,15 +58,11 @@
                     <a class="navbar__link with-icon" href="/shop">SHOP<iconify-icon
                             icon="tabler:chevron-down"></iconify-icon></a>
                     <ul class="submenu">
+                        <% (locals.categories || []).forEach(function(category) { %>
                         <li class="submenu__item">
-                            <a href="/shop/filter-category/funkos" class="submenu__link">Funkos</a>
+                            <a href="/shop/filter-category/<%= category.toLowerCase() %>" class="submenu__link"><%= category %></a>
                         </li>
-                        <li class="submenu__item">
-                            <a href="/shop/filter-category/remeras" class="submenu__link">Remeras</a>
-                        </li>
-                        <li class="submenu__item">
-                            <a href="/shop/filter-category/llaveros" class="submenu__link">Llaveros</a>
-                        </li>
+                        <% }); %>
                     </ul>
                 </li>
                 <li>
