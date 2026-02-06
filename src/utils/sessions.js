@@ -1,33 +1,23 @@
 require('dotenv').config();
 const session = require('express-session');
-const { conn } = require('../config/conn')
-const MySQLStore = require('express-mysql-session')(session);
-
-// Declaramos nuestra BBDD como store
-const sessionStore = new MySQLStore({     
-    // expiration: 5 * 60 * 1000, // Duración de la sesión en milisegundos 
- }, conn);
 
 module.exports = {
 
     initSession: () => {
         return session({
-            secret: process.env.SESSION_NAME,
+            secret: process.env.SESSION_NAME || 'default_session_secret',
 
             // la sesión solo se guardará si hay cambios
             resave: false,
-            saveUninitialized: false,    
+            saveUninitialized: false,
 
-            // usamos como store la BBDD
-            store: sessionStore,
+            // Usamos el MemoryStore por defecto de express-session
+            rolling: true,
 
-            // Para reiniciar el tiempo de expiración en cada solicitud
-            rolling: true, 
-            
             cookie: {
                 maxAge: 5 * 60 * 1000, // 5 minutos en milisegundos
             },
-        })
+        });
     },
-    
-}
+
+};
