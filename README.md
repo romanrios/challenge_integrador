@@ -39,3 +39,4 @@ __Grupo 2:__ Juan Cáceres, Román Ríos, Rubén Hernández, José Antonio Pinz�
 ## Acceder al sitio
 
 Desplegado en Vercel: [https://romanrios-funkoshop.vercel.app/home](https://romanrios-funkoshop.vercel.app/home)
+_🚧 Despliegue temporalmente inactivo_
